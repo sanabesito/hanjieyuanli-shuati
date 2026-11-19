@@ -307,6 +307,109 @@ input{font-family:inherit}
 .selfev .no.chosen{background:#fdf1f0}
 .revtip{margin:10px 2px 0;font-size:12.5px;color:var(--muted)}
 @media(max-width:899px){ .anscard .txt{font-size:14px} }
+
+/* ===== 视觉微调：更轻透的钢铁蓝 + 铜色层次 ===== */
+body{
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(47,127,181,.12), transparent 62%),
+    radial-gradient(760px 420px at 100% 0%, rgba(217,112,31,.10), transparent 58%),
+    var(--bg);
+}
+.view{border-radius:18px;box-shadow:0 12px 34px rgba(18,42,63,.08),0 2px 6px rgba(18,42,63,.04)}
+.navitem.on{background:linear-gradient(90deg,rgba(28,90,134,.14),rgba(255,255,255,.92));box-shadow:inset 3px 0 0 var(--accent)}
+.rescard:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,42,63,.10);border-color:rgba(28,90,134,.28)}
+.statcard:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,42,63,.10)}
+.bottomnav{box-shadow:0 -8px 24px rgba(18,42,63,.10)}
+
+/* ===== 简答默写 · AI 踩分 ===== */
+.ep-page{display:flex;flex-direction:column;gap:14px}
+.ep-hero{position:relative;overflow:hidden;border-radius:18px;padding:22px 20px;color:#fff;background:linear-gradient(135deg,#0e2f46 0%,#174a68 55%,#1c5a86 100%);box-shadow:0 16px 36px rgba(13,43,63,.18)}
+.ep-hero::before{content:"";position:absolute;right:-60px;top:-80px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(244,185,92,.38),transparent 65%)}
+.ep-hero::after{content:"";position:absolute;left:-70px;bottom:-110px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(47,127,181,.34),transparent 68%)}
+.ep-kicker{position:relative;z-index:1;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f4c47a;font-weight:700}
+.ep-hero h2{position:relative;z-index:1;margin:8px 0 6px;font-size:24px;line-height:1.35;letter-spacing:-.02em}
+.ep-hero p{position:relative;z-index:1;margin:0;font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.78);max-width:700px}
+.ep-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+@media(min-width:720px){.ep-stats{grid-template-columns:repeat(4,1fr)}}
+.ep-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 11px;backdrop-filter:blur(4px)}
+.ep-stat b{display:block;font-size:20px;line-height:1.2;color:#ffd89b}
+.ep-stat span{font-size:11px;color:rgba(255,255,255,.68)}
+.ep-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 10px 26px rgba(18,42,63,.07)}
+.ep-chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 6px;scrollbar-width:none}
+.ep-chips::-webkit-scrollbar{display:none}
+.ep-chip{flex:0 0 auto;min-height:44px;padding:0 13px;border-radius:999px;border:1px solid var(--line);background:#f7f9fb;color:var(--ink);font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.ep-chip em{font-style:normal;color:var(--muted);font-weight:500;margin-left:4px}
+.ep-chip.on{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(28,90,134,.22)}
+.ep-chip.on em{color:rgba(255,255,255,.8)}
+.ep-toolrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 14px}
+.ep-toggle{min-height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--muted);font-size:12.5px;font-weight:600;cursor:pointer}
+.ep-toggle.on{border-color:rgba(28,90,134,.35);background:var(--tint);color:var(--brand)}
+.ep-muted{font-size:12px;color:var(--muted);margin-left:auto}
+.ep-card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#fff,#fbfcfd);padding:16px}
+.ep-cardhead{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.ep-badge{font-size:11.5px;line-height:1;padding:7px 9px;border-radius:999px;background:var(--tint);color:var(--brand);font-weight:700}
+.ep-badge.soft{background:#f3f6f9;color:var(--muted);font-weight:600}
+.ep-badge.last{background:#fff4e5;color:#a75b10}
+.ep-q{font-size:18px;line-height:1.7;font-weight:700;color:var(--ink);margin:2px 0 8px}
+.ep-hint{font-size:12.5px;line-height:1.65;color:var(--muted);margin-bottom:10px}
+.ep-textarea{width:100%;min-height:190px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:12px 13px;font-size:16px;line-height:1.75;color:var(--ink);background:#fbfdfe;outline:none;transition:border-color .15s,box-shadow .15s}
+.ep-textarea:focus{border-color:var(--brand2);box-shadow:0 0 0 3px rgba(47,127,181,.14)}
+.ep-countrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin:7px 2px 12px}
+.ep-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:680px){.ep-actions{grid-template-columns:2fr 1fr 1fr 1fr}}
+.ep-btn{min-height:46px;border-radius:12px;border:1px solid var(--line);font-size:14px;font-weight:700;cursor:pointer;transition:transform .12s,box-shadow .12s,background .12s}
+.ep-btn.primary{border:0;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 8px 18px rgba(28,90,134,.22)}
+.ep-btn.primary:active{transform:translateY(1px)}
+.ep-btn.ghost{background:#f6f9fb;color:var(--ink)}
+.ep-btn:disabled{opacity:.6;cursor:wait}
+.ep-link{border:0;background:none;color:var(--brand);font-size:12.5px;font-weight:600;min-height:44px;padding:0 4px;cursor:pointer}
+.ep-result{margin-top:12px}
+.ep-score{display:grid;grid-template-columns:1fr;gap:10px;padding:14px;border-radius:14px;border:1px solid #dbe9f2;background:linear-gradient(135deg,#f4f9fc,#fff)}
+@media(min-width:600px){.ep-score{grid-template-columns:auto 1fr auto;align-items:center}}
+.ep-score b{font-size:26px;color:var(--brand);line-height:1}
+.ep-score b small{font-size:12px;color:var(--muted);font-weight:600}
+.ep-score span{font-size:12px;color:var(--muted)}
+.ep-bar{height:7px;border-radius:99px;background:#e6edf3;overflow:hidden}
+.ep-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--accent))}
+.ep-source{display:inline-block;margin-top:5px;padding:3px 7px;border-radius:6px;background:#eaf3f8;color:var(--brand);font-size:10.5px;font-weight:700}
+.ep-comment{margin-top:10px;font-size:13px;line-height:1.7;color:#395062;background:#f7fafc;border-left:3px solid var(--brand2);border-radius:8px;padding:10px 12px}
+.ep-points{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.ep-point{border:1px solid var(--line);border-radius:11px;padding:10px 12px;background:#fff}
+.ep-point.full{border-color:#cfe7d8;background:#f6fcf8}
+.ep-point.partial{border-color:#f3dfbd;background:#fffbf3}
+.ep-point.none{border-color:#f4d4d0;background:#fff8f7}
+.ep-point-head{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--muted)}
+.ep-picon{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;background:#e9eef2;color:#43596a}
+.ep-point.full .ep-picon{background:#d9f2e3;color:#177a45}
+.ep-point.partial .ep-picon{background:#fbe8c8;color:#a25d0e}
+.ep-point.none .ep-picon{background:#f8dcd7;color:#b03a2e}
+.ep-pt{margin-left:auto;color:var(--ink)}
+.ep-ptext{font-size:13px;line-height:1.65;color:var(--ink);margin-top:5px}
+.ep-pnote{font-size:12px;line-height:1.55;color:var(--muted);margin-top:4px}
+.ep-refcard{border:1px solid var(--line);border-radius:14px;background:#fbfcfd;padding:14px}
+.ep-refcard h4{font-size:13px;margin:0 0 8px;color:var(--brand)}
+.ep-refcard ol{margin:0;padding-left:20px;font-size:13px;line-height:1.7;color:#334c5f}
+.ep-cfg{border:1px dashed var(--line);border-radius:12px;padding:12px;margin-top:12px;background:#fafcfd}
+.ep-cfg label{display:block;font-size:11.5px;font-weight:700;color:var(--muted);margin:8px 0 4px}
+.ep-cfg input{width:100%;min-height:40px;border:1px solid var(--line);border-radius:9px;padding:0 10px;font-size:14px;background:#fff;color:var(--ink)}
+.ep-cfg-note{font-size:11.5px;line-height:1.6;color:var(--muted);margin-top:8px}
+.ep-toast{position:fixed;left:50%;bottom:86px;transform:translate(-50%,12px);background:#16384e;color:#fff;font-size:13px;padding:9px 14px;border-radius:10px;opacity:0;pointer-events:none;transition:.2s;z-index:1000;max-width:80vw;text-align:center}
+.ep-toast.show{opacity:1;transform:translate(-50%,0)}
+.ep-loading{font-size:13px;color:var(--muted);padding:10px 0}
+.ep-empty{font-size:13px;line-height:1.8;color:var(--muted);text-align:center;padding:18px 8px}
+@media(max-width:520px){
+  .ep-hero{padding:18px 16px;border-radius:16px}
+  .ep-hero h2{font-size:20px}
+  .ep-hero p{font-size:13px}
+  .ep-panel{padding:13px}
+  .ep-card{padding:13px}
+  .ep-q{font-size:16px}
+  .ep-textarea{min-height:170px}
+  .ep-actions{grid-template-columns:1fr 1fr}
+  .ep-btn.primary{grid-column:1/-1}
+  .ep-muted{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -329,6 +432,7 @@ input{font-family:inherit}
     <div class="sect">导航</div>
     <button class="navitem" data-route="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>总览</button>
     <button class="navitem" data-route="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg>开始刷题</button>
+    <button class="navitem" data-route="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg>简答默写</button>
     <button class="navitem" data-route="wrong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 21h16z"/><path d="M12 9v5"/><circle cx="12" cy="17.4" r="1"/></svg>错题本</button>
     <button class="navitem" data-route="speed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>速记卡片</button>
     <button class="navitem" data-route="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>学习统计</button>
@@ -391,6 +495,1507 @@ const DB_KEY = 'weld-quiz-db-v1';
 const CHS = ['全部','绪论','第一章','第二章','第三章','第四章','第五章','第六章'];
 const CHSHORT = {'绪论':'绪','第一章':'一','第二章':'二','第三章':'三','第四章':'四','第五章':'五','第六章':'六'};
 const TYPES = {'全部':'全部题型','mcq':'单选','fill':'填空','term':'名词','essay':'简答'};
+const ESSAY_AI = [
+ {
+  "id": "q315",
+  "ch": "绪论",
+  "chname": "焊接概述",
+  "q": "焊接方法按加热特点可分为哪几类？各类的基本特点是什么？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "熔焊：加热使母材局部熔化形成熔池，冷却结晶形成接头，需熔化金属，应用最广（电弧焊、气焊等）",
+    "k": [
+     "熔焊",
+     "冷却结晶形成接头",
+     "需熔化金属",
+     "应用最广",
+     "电弧焊"
+    ]
+   },
+   {
+    "t": "压焊：加压（可兼加热）使接触面塑性变形或再结晶形成接头，母材不熔化或少量熔化（电阻点焊、摩擦焊等）",
+    "k": [
+     "压焊",
+     "压焊：加压",
+     "可兼加热",
+     "母材不熔化或少量熔化",
+     "电阻点焊"
+    ]
+   },
+   {
+    "t": "钎焊：用熔点低于母材的钎料熔化填充间隙，母材不熔化（软钎焊、硬钎焊）",
+    "k": [
+     "钎焊",
+     "母材不熔化",
+     "软钎焊",
+     "硬钎焊"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q316",
+  "ch": "绪论",
+  "chname": "焊接概述",
+  "q": "焊接热输入 q=ηUI/v 中各符号的含义是什么？增大焊接电流或降低焊接速度对焊接热过程有何影响？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "q为热输入（线能量），η为焊接热源热效率，U为电弧电压，I为焊接电流，v为焊接速度",
+    "k": [
+     "q为热输入",
+     "热输入",
+     "线能量",
+     "η为焊接热源热效率",
+     "焊接热源热效率"
+    ]
+   },
+   {
+    "t": "增大电流I或降低速度v均使热输入增大，焊件加热速度减慢、高温停留时间延长、冷却速度降低，过热区晶粒长大倾向增大",
+    "k": [
+     "焊件加热速度减慢",
+     "高温停留时间延长",
+     "冷却速度降低",
+     "过热区晶粒长大倾向增大"
+    ]
+   },
+   {
+    "t": "反之热输入减小，加热速度快、冷却速度快，淬硬和冷裂倾向增大。实际生产中应合理匹配电流与速度，控制冷却速度在适宜范围",
+    "k": [
+     "反之热输入减小",
+     "加热速度快",
+     "冷却速度快",
+     "淬硬和冷裂倾向增大",
+     "控制冷却速度在适宜范围"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q317",
+  "ch": "绪论",
+  "chname": "焊接概述",
+  "q": "焊接热循环的主要参数有哪些？它们对焊接接头的组织和性能有何影响？",
+  "full": 8,
+  "pts": [
+   {
+    "t": "四个参数：加热速度ωH、最高加热温度Tm、高温停留时间tH、冷却速度（尤其800~500℃区间的冷却时间t8/5）",
+    "k": [
+     "四个参数",
+     "四个参数：加热速度ωH",
+     "最高加热温度Tm",
+     "高温停留时间tH",
+     "冷却速度"
+    ]
+   },
+   {
+    "t": "Tm决定HAZ中发生的组织转变类型，过热区Tm接近固相线、晶粒严重长大",
+    "k": [
+     "过热区Tm接近固相线",
+     "晶粒严重长大"
+    ]
+   },
+   {
+    "t": "加热速度快、高温停留时间长均促使晶粒长大，降低塑韧性",
+    "k": [
+     "加热速度快",
+     "塑韧性"
+    ]
+   },
+   {
+    "t": "冷却速度决定相变产物，冷却过快易淬硬（产生马氏体）导致冷裂纹，冷却过慢晶粒粗大、性能下降。控制热循环参数是焊接工艺设计的核心",
+    "k": [
+     "冷却速度决定相变产物",
+     "冷却过快易淬硬",
+     "马氏体",
+     "导致冷裂纹",
+     "冷却过慢晶粒粗大"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q318",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "焊接化学冶金过程有哪些特点？",
+  "full": 10,
+  "pts": [
+   {
+    "t": "反应温度高（电弧区可达4000K以上）且温度变化大，冶金反应速度快、程度不完全",
+    "k": [
+     "反应温度高",
+     "电弧区可达4000K以上",
+     "且温度变化大",
+     "冶金反应速度快",
+     "程度不完全"
+    ]
+   },
+   {
+    "t": "反应时间极短，熔滴、熔池存在时间仅数秒，反应难以达到平衡",
+    "k": [
+     "反应时间极短",
+     "熔滴",
+     "熔池存在时间仅数秒",
+     "反应难以达到平衡"
+    ]
+   },
+   {
+    "t": "反应接触面积大（熔滴比表面积大），气-液-渣多相反应同时进行",
+    "k": [
+     "反应接触面积大",
+     "熔滴比表面积大"
+    ]
+   },
+   {
+    "t": "熔池不断运动，反应在非平衡条件下进行",
+    "k": [
+     "熔池不断运动",
+     "反应在非平衡条件下进行"
+    ]
+   },
+   {
+    "t": "参与反应物质多（气相、熔渣、母材、焊芯等），反应复杂，焊缝成分受冶金反应显著影响",
+    "k": [
+     "参与反应物质多",
+     "气相",
+     "熔渣",
+     "母材",
+     "焊芯等"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q319",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "焊条工艺性能包括哪几个方面？影响因素有哪些？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "方面：电弧稳定性、再引弧性、飞溅大小、脱渣性、焊缝成形（波纹、宽度）、全位置操作性（立、仰焊适应性）、熔化速度与焊条发尘量等",
+    "k": [
+     "方面：电弧稳定性",
+     "再引弧性",
+     "飞溅大小",
+     "脱渣性",
+     "焊缝成形"
+    ]
+   },
+   {
+    "t": "影响因素：药皮成分（稳弧剂、造渣剂等）、焊接电流种类与极性（交直流、正反接）、焊接电流大小、焊条烘干状况、焊接工艺参数（电弧电压、焊速）等。工艺性能好的焊条应电弧稳定、飞溅小、脱渣易、成形美观",
+    "k": [
+     "影响因素",
+     "影响因素：药皮成分",
+     "稳弧剂",
+     "造渣剂等",
+     "焊接电流种类与极性"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q320",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "简述焊缝金属的脱氧途径。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "沉淀脱氧：向熔池加入脱氧剂（Mn、Si、Ti、Al等），与熔池中溶解氧直接反应生成不溶于金属的氧化物（MnO、SiO2、TiO2等）上浮入渣",
+    "k": [
+     "沉淀脱氧",
+     "Mn",
+     "Si",
+     "Ti",
+     "Al等"
+    ]
+   },
+   {
+    "t": "扩散脱氧：利用FeO向熔渣中扩散转移的方式降低熔池含氧量，碱性渣中FeO活度低，扩散脱氧效果好",
+    "k": [
+     "扩散脱氧",
+     "碱性渣中FeO活度低",
+     "扩散脱氧效果好"
+    ]
+   },
+   {
+    "t": "实际焊接中常用沉淀脱氧与扩散脱氧配合，如药皮中Mn-Si联合脱氧，产物MnO·SiO2密度小、熔点低、易上浮",
+    "k": [
+     "熔点低",
+     "易上浮"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q321",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "分别叙述硫和磷对焊接的危害性及其控制措施。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "硫的危害：硫与铁、镍等形成低熔点共晶（FeS+Fe、NiS+Ni），偏聚于晶界，产生结晶裂纹（热裂纹），并降低焊缝塑韧性；控制措施：限制母材和焊材含硫量，用碱性渣脱硫（CaO+FeS→CaS+FeO），添加Mn形成高熔点MnS",
+    "k": [
+     "硫的危害",
+     "硫的危害：硫与铁",
+     "镍等形成低熔点共晶",
+     "FeS+Fe",
+     "NiS+Ni"
+    ]
+   },
+   {
+    "t": "磷的危害：磷与铁形成低熔点共晶（Fe3P），增加冷脆性（降低低温冲击韧度），也促进偏析和裂纹；控制措施：限制含磷量，用碱性渣脱磷（先氧化为P2O5，再与CaO结合生成3CaO·P2O5入渣）",
+    "k": [
+     "磷的危害",
+     "Fe3P",
+     "增加冷脆性",
+     "低温冲击韧度",
+     "也促进偏析和裂纹"
+    ]
+   },
+   {
+    "t": "碱性焊条、含CaO的渣系有利于脱硫脱磷",
+    "k": [
+     "碱性焊条"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q322",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "对比说明酸性焊条对焊缝金属的净化作用。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "酸性焊条（如E4303，钛钙型渣系TiO2-CaO-SiO2）：渣中酸性氧化物多、碱度B1<1，自由氧离子少，脱硫脱磷能力弱；焊缝含氧量较高、含硫磷略高，抗裂性和低温韧性较差",
+    "k": [
+     "酸性焊条",
+     "如E4303",
+     "渣中酸性氧化物多",
+     "碱度B1<1",
+     "自由氧离子少"
+    ]
+   },
+   {
+    "t": "碱性焊条（低氢型，CaO-CaF2-SiO2渣系）：渣碱度B1>1，自由氧离子多，有利于扩散脱氧和脱硫脱磷（CaO+FeS→CaS+FeO、CaO+P2O5→磷酸钙），且CaF2能去氢，焊缝含氧、氢、硫磷量均低，金属较纯净，净化作用强",
+    "k": [
+     "碱性焊条",
+     "低氢型",
+     "渣碱度B1>1",
+     "自由氧离子多",
+     "有利于扩散脱氧和脱硫脱磷"
+    ]
+   },
+   {
+    "t": "因此碱性焊条焊缝抗裂性和韧性好，多用于重要结构；但工艺性能（稳弧、脱渣）略差，需烘干后使用",
+    "k": [
+     "多用于重要结构",
+     "但工艺性能",
+     "稳弧",
+     "脱渣",
+     "略差"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q323",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "氢的来源有哪些？氢对焊缝金属有什么危害？如何控制？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "来源：焊条药皮和焊剂中的水分、有机物分解（H2O、碳氢化合物），母材和焊丝表面油污、锈蚀，以及焊接区空气中的水汽等",
+    "k": [
+     "来源",
+     "有机物分解",
+     "H2O",
+     "碳氢化合物",
+     "母材和焊丝表面油污"
+    ]
+   },
+   {
+    "t": "危害：形成白点降低塑性，产生氢致延迟裂纹（冷裂纹），造成气孔，引起氢脆和再热裂纹",
+    "k": [
+     "危害",
+     "危害：形成白点降低塑性",
+     "氢致延迟裂纹",
+     "冷裂纹",
+     "造成气孔"
+    ]
+   },
+   {
+    "t": "控制：烘干焊材（药皮去水）、清理坡口油锈、选用低氢型焊条和低氢焊剂、控制气氛中水分、焊后脱氢处理（250℃×6h或350℃×1h）、选用氢扩散系数小的奥氏体焊缝（D：F>M>A，奥氏体最小）",
+    "k": [
+     "控制",
+     "控制：烘干焊材",
+     "药皮去水",
+     "清理坡口油锈",
+     "选用低氢型焊条和低氢焊剂"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q324",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "焊缝金属合金化的方式有哪些？合金元素过渡系数受哪些因素影响？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "方式：合金焊丝（带极）、药芯焊丝（焊条药皮或焊剂中加入合金）、合金粉末、以及母材稀释（熔合比）等",
+    "k": [
+     "方式",
+     "方式：合金焊丝",
+     "带极",
+     "药芯焊丝",
+     "焊条药皮或焊剂中加入合金"
+    ]
+   },
+   {
+    "t": "过渡系数影响因素：合金元素的氧化性（与氧亲和力）、在渣中的分配、熔渣碱度（碱性渣有利于合金过渡）、焊接工艺参数（电流、极性、焊速）、合金粒度与加入方式等。过渡系数越大，合金利用率越高",
+    "k": [
+     "过渡系数影响因素",
+     "与氧亲和力",
+     "渣中的分配",
+     "熔渣碱度",
+     "碱性渣有利于合金过渡"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q325",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "简述焊接气孔的危害及防治措施。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "危害：气孔削弱焊缝有效截面积、降低致密性和力学性能（尤其冲击韧度与疲劳强度），还会引起应力集中，是焊接生产中常见的缺陷",
+    "k": [
+     "危害",
+     "致密性和力学性能",
+     "尤其冲击韧度与疲劳强度",
+     "还会引起应力集中",
+     "是焊接生产中常见的缺陷"
+    ]
+   },
+   {
+    "t": "防治措施：清理坡口与焊丝表面油锈水分；烘干焊条焊剂（有机物药皮≤200℃、含碳酸盐≤450℃）；选用合适的焊条（低氢型）和焊接参数（减小电流、适当提高焊速以缩短熔池存在时间）；控制保护气体纯度与流量、防止空气侵入；采用预热、后热控制冷却速度，利于气体逸出",
+    "k": [
+     "防治措施",
+     "烘干焊条焊剂",
+     "有机物药皮≤200℃",
+     "含碳酸盐≤450℃",
+     "选用合适的焊条"
+    ]
+   },
+   {
+    "t": "按气体来源可分为CO气孔、H2气孔、N2气孔，需针对性防治",
+    "k": [
+     "按气体来源可分为CO气孔",
+     "按气体来源可分",
+     "CO气孔",
+     "H2气孔",
+     "N2气孔"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q326",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "熔渣在焊接过程中起什么作用？",
+  "full": 8,
+  "pts": [
+   {
+    "t": "机械保护作用：覆盖熔滴和熔池，隔绝空气，防止N2、O2侵入",
+    "k": [
+     "机械保护作用",
+     "隔绝空气",
+     "N2",
+     "O2侵入"
+    ]
+   },
+   {
+    "t": "冶金处理作用：作为反应介质参与脱氧、脱硫、脱磷、去氢等冶金反应，影响焊缝成分",
+    "k": [
+     "冶金处理作用",
+     "冶金处理作用：作",
+     "反应介质参与脱氧",
+     "脱硫",
+     "脱磷"
+    ]
+   },
+   {
+    "t": "改善成形作用：稳定电弧、约束熔滴，使焊缝成形良好",
+    "k": [
+     "改善成形作用",
+     "改善成形作用：稳定电弧",
+     "约束熔滴",
+     "焊缝成形良好"
+    ]
+   },
+   {
+    "t": "调节冷却作用：渣壳隔热，减缓熔池冷却速度，有利于气体逸出和改善结晶条件。因此渣系设计（碱度、粘度、熔点）是焊接材料设计的核心",
+    "k": [
+     "调节冷却作用",
+     "调节冷却作用：渣壳隔热",
+     "减缓熔池冷却速度",
+     "因此渣系设计",
+     "碱度"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q327",
+  "ch": "第一章",
+  "chname": "焊接化学冶金",
+  "q": "熔渣碱度对焊接冶金反应有什么影响？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "碱度B1>1（碱性渣）自由氧离子多：有利于扩散脱氧（FeO活度低），有利于脱硫（CaO+FeS）、脱磷（CaO+3CaO·P2O5），对氢的排出有一定作用（配合CaF2），焊缝含氧、硫磷、氢低，净化效果好、韧性高",
+    "k": [
+     "碱度B1>1",
+     "碱性渣",
+     "FeO活度低",
+     "有利于脱硫",
+     "CaO+FeS"
+    ]
+   },
+   {
+    "t": "碱度B1<1（酸性渣）自由氧离子少：脱硫脱磷能力弱、含氧量高，但工艺性能好、稳弧和脱渣容易、成形美观",
+    "k": [
+     "碱度B1<1",
+     "酸性渣",
+     "含氧量高",
+     "但工艺性能好",
+     "稳弧和脱渣容易"
+    ]
+   },
+   {
+    "t": "碱度过高渣粘度增大、易产生夹渣，焊条工艺性能变差。因此应按结构重要性选配渣系",
+    "k": [
+     "碱度过高渣粘度增大",
+     "易产生夹渣",
+     "焊条工艺性能变差"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q328",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "解释焊条型号E5515-N5 P U H10中数字及字母的含义，并分析焊条J422（E4303）的冶金性能。",
+  "full": 4,
+  "pts": [
+   {
+    "t": "E5515-N5 P U H10：E为焊条；55表示熔敷金属抗拉强度≥550MPa；1表示全位置焊接；5表示低氢钠型药皮；-N5表示含镍（低温钢焊条）；P表示具有扩散氢代号；U表示熔敷金属冲击吸收功为U型缺口试样测定；H10表示熔敷金属扩散氢含量≤10mL/100g（低氢型）",
+    "k": [
+     "焊条",
+     "1表示全位置焊接",
+     "5表示低氢钠型药皮",
+     "-N5表示含镍",
+     "低温钢焊条"
+    ]
+   },
+   {
+    "t": "J422即E4303：钛钙型药皮（TiO2-CaO-SiO2渣系），碱度B1≈0.76（酸性焊条），熔敷金属抗拉强度≥430MPa，全位置焊接；冶金性能：电弧稳定、工艺性能好，但渣呈酸性、自由氧离子少，脱硫脱磷和扩散脱氧能力弱，焊缝含氧量较高，抗裂性和低温韧性不如碱性焊条，适用于一般低碳钢结构",
+    "k": [
+     "J422即E4303",
+     "J422",
+     "E4303：钛钙型药皮",
+     "碱度B1≈0.76",
+     "酸性焊条"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q329",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "酸性焊条与碱性焊条在冶金性能和工艺性能上有哪些主要区别？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "冶金性能：酸性焊条（钛钙型、氧化铁型等）渣碱度<1，脱硫脱磷能力弱、焊缝含氧量高、抗裂性差；碱性焊条（低氢型）渣碱度>1，自由氧离子多，扩散脱氧、脱硫脱磷效果好，含氟化物去氢，焊缝含氧、氢、硫磷低、净化好、抗裂性强",
+    "k": [
+     "冶金性能",
+     "冶金性能：酸性焊条",
+     "钛钙型",
+     "氧化铁型等",
+     "渣碱度<1"
+    ]
+   },
+   {
+    "t": "工艺性能：酸性焊条稳弧性好、飞溅小、脱渣容易、成形美观、可交直流两用；碱性焊条稳弧性稍差、飞溅略大、脱渣稍难，一般用直流反接，需按规范烘干（350℃×1h左右）",
+    "k": [
+     "工艺性能",
+     "飞溅小",
+     "脱渣容易",
+     "成形美观",
+     "可交直流两用"
+    ]
+   },
+   {
+    "t": "用途：酸性焊条用于一般结构，碱性焊条用于重要结构和低合金高强度钢",
+    "k": [
+     "用途"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q330",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "焊条药皮由哪些组成物构成？各自起什么作用？",
+  "full": 12,
+  "pts": [
+   {
+    "t": "稳弧剂（碳酸钾、碳酸钠、长石等）：提高电弧稳定性",
+    "k": [
+     "稳弧剂",
+     "碳酸钾",
+     "碳酸钠",
+     "长石等",
+     "提高电弧稳定性"
+    ]
+   },
+   {
+    "t": "造渣剂（TiO2、SiO2、CaCO3、CaF2等）：形成熔渣覆盖熔池，保护与冶金处理",
+    "k": [
+     "造渣剂",
+     "TiO2",
+     "SiO2",
+     "CaCO3",
+     "CaF2等"
+    ]
+   },
+   {
+    "t": "造气剂（淀粉、纤维素、碳酸盐）：产生CO2、CO等保护气体",
+    "k": [
+     "造气剂",
+     "淀粉",
+     "纤维素",
+     "碳酸盐",
+     "产生CO2"
+    ]
+   },
+   {
+    "t": "脱氧剂（Mn、Si、Al、Ti铁合金）：沉淀脱氧、细化晶粒",
+    "k": [
+     "脱氧剂",
+     "Mn",
+     "Si",
+     "Al",
+     "Ti铁合金"
+    ]
+   },
+   {
+    "t": "合金剂：过渡合金元素改善焊缝成分",
+    "k": [
+     "合金剂"
+    ]
+   },
+   {
+    "t": "粘结剂（水玻璃Na2O·nSiO2）：将药皮粘牢于焊芯，兼有造渣作用。各组分协调决定焊条的工艺与冶金性能",
+    "k": [
+     "粘结剂",
+     "将药皮粘牢于焊芯",
+     "兼有造渣作用"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q331",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "焊条为什么要烘干？不同焊条的烘干温度规范有何区别？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "目的：去除药皮吸附的水分和结晶水，防止焊接时水分分解产生氢（H2O→H2+O），从而避免氢气孔和氢致冷裂纹",
+    "k": [
+     "焊接时水分分解产生氢",
+     "H2O→H2+O"
+    ]
+   },
+   {
+    "t": "规范：含有机物（淀粉、纤维素）的酸性焊条烘干温度一般不超过200℃（防止有机物分解失效）；含碳酸盐（CaCO3）的焊条不超过450℃（防止碳酸盐提前分解）；碱性低氢焊条烘干温度一般为350℃左右保温1~2h，并随用随取；焊剂烘干温度亦按含有机物/矿物类型区分（≤200℃/≤450℃）",
+    "k": [
+     "规范",
+     "规范：含有机物",
+     "淀粉",
+     "纤维素",
+     "有机物分解失效"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q332",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "焊剂的作用是什么？按制造方法和碱度可如何分类？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "作用：埋弧焊与电渣焊中熔化形成熔渣，起保护熔池、隔绝空气、参与冶金反应（脱氧、脱硫、脱磷、合金化）以及改善成形的作用",
+    "k": [
+     "作用",
+     "起保护熔池",
+     "隔绝空气",
+     "参与冶金反应",
+     "脱氧"
+    ]
+   },
+   {
+    "t": "按制造方法：熔炼焊剂（高温熔炼、玻璃态，成分均匀）、烧结焊剂（混料造粒烧结，可加合金、碱度调节范围大）、粘结焊剂（陶质焊剂）",
+    "k": [
+     "按制造方法",
+     "按制造方法：熔炼焊剂",
+     "高温熔炼",
+     "玻璃态",
+     "成分均匀"
+    ]
+   },
+   {
+    "t": "按碱度B1分类：高碱性（B1>1.5）、碱性（B1 1.0~1.5）、中性（B1 0.8~1.0）、酸性（B1<0.8）焊剂。碱性焊剂焊缝韧性和抗裂性好，酸性焊剂工艺性好",
+    "k": [
+     "按碱度B1分类",
+     "按碱度B1分类：高碱性",
+     "B1>1.5",
+     "碱性",
+     "B1 1.0~1.5"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q333",
+  "ch": "第二章",
+  "chname": "焊接材料",
+  "q": "焊条选用应遵循哪些基本原则？",
+  "full": 12,
+  "pts": [
+   {
+    "t": "等强原则：焊缝金属强度与母材相匹配（如Q345用E5015），不盲目追求高强度",
+    "k": [
+     "等强原则",
+     "如Q345用E5015",
+     "不盲目追求高强度"
+    ]
+   },
+   {
+    "t": "考虑母材化学成分和焊接性：易淬火钢、低温钢、耐热钢选低氢型焊条或专用焊条",
+    "k": [
+     "考虑母材化学成分和焊接性",
+     "低温钢"
+    ]
+   },
+   {
+    "t": "考虑接头形式和受力条件：承受冲击载荷、低温或动载结构选韧性好的碱性焊条",
+    "k": [
+     "考虑接头形式和受力条件"
+    ]
+   },
+   {
+    "t": "考虑工作条件：耐蚀、耐磨等特殊要求选相应专用焊条",
+    "k": [
+     "考虑工作条件",
+     "考虑工作条件：耐蚀"
+    ]
+   },
+   {
+    "t": "考虑工艺性与经济性：一般结构优先选用工艺性能好的酸性焊条",
+    "k": [
+     "考虑工艺性与经济性"
+    ]
+   },
+   {
+    "t": "考虑焊接位置和设备：全位置选药皮类型合适的焊条、直流设备选极性匹配焊条",
+    "k": [
+     "考虑焊接位置和设备",
+     "直流设备选极性匹配焊条"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q334",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "熔池结晶有哪些特点？为什么以非自发形核为主？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "特点：熔池体积小、冷却速度快，结晶速度很快；结晶过程在运动着的熔池中连续进行；结晶从熔合线开始向焊缝中心推进，晶粒沿最大散热方向（垂直熔合线）择优长大成柱状晶",
+    "k": [
+     "特点：熔池体积小",
+     "冷却速度快",
+     "结晶速度很快",
+     "晶粒沿最大散热方向",
+     "垂直熔合线"
+    ]
+   },
+   {
+    "t": "非自发形核为主的原因：熔池中存在大量现成表面——熔合区半熔化状态的母材晶粒表面、合金元素和杂质的悬浮质点等，这些现成界面大大降低形核功，使结晶优先在这些界面上形核，即联生结晶（依附生长）",
+    "k": [
+     "非自发形核为主的原因",
+     "非自发形核",
+     "结晶优先在这些界面上形核",
+     "联生结晶",
+     "依附生长"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q335",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "说明焊接速度对结晶速度和方向的影响。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "结晶线速度vc与焊接速度v的关系：vc=v·cosθ（θ为结晶方向与焊接方向的夹角）。熔合线处θ=90°，vc=0；熔池中心θ=0°，vc最大等于v",
+    "k": [
+     "结晶方向与焊接方向的夹角",
+     "熔合线处θ=90°",
+     "vc=0",
+     "熔池中心θ=0°",
+     "vc最大等于v"
+    ]
+   },
+   {
+    "t": "焊接速度增大时：熔池拉长，柱状晶成长方向趋向垂直于焊缝中心线（即更垂直于熔合线而平行于横截面），导致焊缝中心易产生热裂纹",
+    "k": [
+     "焊接速度增大时",
+     "焊接速度增大时：熔池拉长",
+     "导致焊缝中心易产生热裂纹"
+    ]
+   },
+   {
+    "t": "焊接速度降低时：熔池变宽变短，柱状晶方向偏向焊接方向，有利于焊缝中心和易裂部位的结晶条件改善。故生产中通过调节焊速控制晶粒生长方向以改善抗裂性",
+    "k": [
+     "焊接速度降低时",
+     "柱状晶方向偏向焊接方向"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q336",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "成分过冷对熔池结晶形态有什么影响？",
+  "full": 8,
+  "pts": [
+   {
+    "t": "结晶形态随成分过冷增大依次为：平面晶→胞状晶→树枝晶（胞状树枝晶）→等轴晶",
+    "k": [
+     "平面晶→胞状晶→树枝晶",
+     "胞状树枝晶",
+     "→等轴晶"
+    ]
+   },
+   {
+    "t": "温度梯度G大、结晶速度R小、溶质浓度C0低时，成分过冷小，倾向平面晶和胞状晶",
+    "k": [
+     "温度梯度G大",
+     "结晶速度R小",
+     "溶质浓度C0低时",
+     "成分过冷小",
+     "倾向平面晶和胞状晶"
+    ]
+   },
+   {
+    "t": "G减小、R增大或C0增大时，成分过冷增大，树枝晶发达，焊缝中心（G小、R大、溶质富集）易形成等轴晶",
+    "k": [
+     "G减小",
+     "R增大或C0增大时",
+     "成分过冷增大",
+     "树枝晶发达",
+     "焊缝中心"
+    ]
+   },
+   {
+    "t": "等轴晶组织致密、性能各向同性较好，细化等轴晶有利于提高焊缝性能；树枝晶发达会加重偏析和热裂倾向",
+    "k": [
+     "等轴晶组织致密",
+     "性能各向同性较好"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q337",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "焊缝金属的偏析有哪些类型？各有什么危害？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "类型：显微偏析（晶内与晶界成分不均，存在于晶粒尺度）、区域偏析（宏观尺度的成分不均，如焊缝中心偏析、层状分布）、以及层状（带条状）偏析等",
+    "k": [
+     "类型",
+     "类型：显微偏析",
+     "晶内与晶界成分不均",
+     "存在于晶粒尺度",
+     "区域偏析"
+    ]
+   },
+   {
+    "t": "危害：偏析使晶界富集低熔点共晶和有害杂质（S、P），降低焊缝塑韧性和抗裂性，促进结晶裂纹（热裂纹）；中心偏析严重时焊缝中心形成脆弱面，导致中心裂纹；显微偏析降低晶界强度，使腐蚀优先沿晶界发生",
+    "k": [
+     "危害",
+     "焊缝塑韧性和抗裂性",
+     "促进结晶裂纹",
+     "热裂纹",
+     "导致中心裂纹"
+    ]
+   },
+   {
+    "t": "控制：细化晶粒（变质处理、振动）、限制S/P含量、控制熔合比和冷却条件",
+    "k": [
+     "控制",
+     "控制：细化晶粒",
+     "变质处理",
+     "振动",
+     "限制S/P含量"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q338",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "根据16Mn钢焊缝化学成分和冷却条件的不同，其固态相变组织可能有哪些？各自特征如何？",
+  "full": 8,
+  "pts": [
+   {
+    "t": "16Mn为不易淬火钢（碳当量较低），常规冷却（正火型冷却）时焊缝为铁素体+珠光体组织：先共析铁素体沿晶界呈网状或针状（魏氏组织倾向），珠光体为片层状，性能良好",
+    "k": [
+     "16Mn为不易淬火钢",
+     "16Mn",
+     "不易淬火钢",
+     "碳当量较低",
+     "常规冷却"
+    ]
+   },
+   {
+    "t": "冷却速度较快（大热输入、厚板、低温焊）时，过冷奥氏体在较低温度转变，得到针状铁素体+贝氏体，强度升高但韧性下降",
+    "k": [
+     "冷却速度较快",
+     "大热输入",
+     "厚板",
+     "低温焊",
+     "过冷奥氏体在较低温度转变"
+    ]
+   },
+   {
+    "t": "冷却速度极快（淬火条件）时，出现马氏体组织（低碳马氏体），硬度高、塑韧性差、淬硬倾向增大，易产生冷裂纹",
+    "k": [
+     "冷却速度极快",
+     "淬火条件",
+     "出现马氏体组织",
+     "低碳马氏体",
+     "硬度高"
+    ]
+   },
+   {
+    "t": "化学成分变化（提高合金元素Mn、Nb等）同样改变CCT曲线位置，使组织向贝氏体、马氏体方向转变。实际焊接应通过控制热输入和预热使冷却速度落在铁素体+珠光体区",
+    "k": [
+     "化学成分变化",
+     "合金元素Mn",
+     "Nb等",
+     "同样改变CCT曲线位置",
+     "组织向贝氏体"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q339",
+  "ch": "第三章",
+  "chname": "熔池凝固和焊缝固态相变",
+  "q": "改善焊缝金属组织的措施有哪些？",
+  "full": 10,
+  "pts": [
+   {
+    "t": "变质处理：向熔池加入微量合金元素（Ti、V、Nb、Mo、B等）形成高熔点质点，细化晶粒（如16Mn焊缝加Ti、V）",
+    "k": [
+     "变质处理",
+     "Ti",
+     "Nb",
+     "Mo",
+     "B等"
+    ]
+   },
+   {
+    "t": "振动结晶：机械振动、超声波振动或电磁搅拌，破碎柱状晶、促进等轴晶，减小偏析",
+    "k": [
+     "振动结晶",
+     "振动结晶：机械振动",
+     "超声波振动或电磁搅拌",
+     "破碎柱状晶",
+     "促进等轴晶"
+    ]
+   },
+   {
+    "t": "多层多道焊：后层对前层产生再加热作用，相当于正火处理，细化组织",
+    "k": [
+     "多层多道焊",
+     "相当于正火处理",
+     "细化组织"
+    ]
+   },
+   {
+    "t": "调整焊接参数：控制热输入和冷却速度，避免晶粒粗大或淬硬组织",
+    "k": [
+     "调整焊接参数",
+     "晶粒粗大或淬硬组织"
+    ]
+   },
+   {
+    "t": "采用奥氏体化或细化晶粒焊材（合金焊丝），从成分上控制组织",
+    "k": [
+     "奥氏体化或细化晶粒焊材",
+     "合金焊丝",
+     "从成分上控制组织"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q340",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "论述易淬火钢（如45钢、30CrMnSi）热影响区的组织分布及对性能的影响。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "组织分布（由熔合线向外）：过热淬火区→相变重结晶（淬火）区→不完全淬火区→回火区（部分）→母材。过热淬火区晶粒粗大，淬火后得到粗大马氏体；完全淬火区得到细马氏体；不完全淬火区为马氏体+部分铁素体；回火区为回火组织",
+    "k": [
+     "组织分布（由熔合线向外",
+     "组织分布",
+     "由熔合线向外",
+     "过热淬火区→相变重结晶",
+     "淬火"
+    ]
+   },
+   {
+    "t": "对性能的影响：过热淬火区硬度高、塑韧性差，是易产生冷裂纹和脆断的薄弱区；马氏体（尤其粗大马氏体）组织淬硬倾向大、氢脆敏感，在拘束应力与扩散氢作用下易形成延迟裂纹",
+    "k": [
+     "对性能的影响",
+     "塑韧性差",
+     "马氏体",
+     "尤其粗大马氏体",
+     "组织淬硬倾向大"
+    ]
+   },
+   {
+    "t": "对策：预热、控制冷却速度（减小淬硬程度）、后热消氢、选用低氢焊材、焊后热处理（回火）改善组织",
+    "k": [
+     "对策",
+     "对策：预热",
+     "控制冷却速度",
+     "淬硬程度",
+     "后热消氢"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q341",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "不易淬火钢（低碳钢、16Mn）热影响区的组织分布有何特点？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "从熔合线向外依次为：熔合区（半熔化区，很窄）、过热区（固相线~1100℃，晶粒粗大、韧性下降）、相变重结晶区（正火区，A3~1000℃，组织细化、性能好）、不完全重结晶区（Ac1~Ac3，组织不均匀）",
+    "k": [
+     "从熔合线向外依次为",
+     "从熔合线向外依次",
+     "熔合区",
+     "半熔化区",
+     "很窄"
+    ]
+   },
+   {
+    "t": "不易淬火钢空冷一般不产生马氏体，组织为铁素体+珠光体（或贝氏体），淬硬倾向小、冷裂敏感性低",
+    "k": [
+     "组织为铁素体+珠光体",
+     "组织",
+     "铁素体+珠光体",
+     "或贝氏体",
+     "淬硬倾向小"
+    ]
+   },
+   {
+    "t": "最薄弱环节是熔合区和过热区（粗晶脆化），需控制热输入避免过热区晶粒过分长大",
+    "k": [
+     "粗晶脆化"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q342",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "焊接热影响区硬化的机理是什么？受哪些因素影响？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "机理：焊接加热使HAZ奥氏体化，快速冷却时奥氏体过冷到Ms以下转变为马氏体（或贝氏体），形成淬硬组织，硬度升高、塑韧性下降；含碳量高、合金元素多的钢淬硬倾向大",
+    "k": [
+     "机理",
+     "马氏体",
+     "或贝氏体",
+     "淬硬组织",
+     "硬度升高"
+    ]
+   },
+   {
+    "t": "影响因素：钢的化学成分（碳当量Ceq越大越易淬硬）、焊接热输入与冷却速度（冷却越快淬硬越严重）、预热温度（预热降低冷却速度、减轻淬硬）、板厚与散热条件（厚板、低温散热快）",
+    "k": [
+     "影响因素",
+     "影响因素：钢的化学成分",
+     "碳当量Ceq越大越易淬硬",
+     "焊接热输入与冷却速度",
+     "冷却越快淬硬越严重"
+    ]
+   },
+   {
+    "t": "对策：预热、合理热输入、后热或焊后热处理，控制冷却速度在临界冷却速度之上",
+    "k": [
+     "对策",
+     "对策：预热",
+     "合理热输入",
+     "后热或焊后热处理"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q343",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "焊接中预热和后热各起什么作用？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "预热：降低焊接区温度梯度、减缓冷却速度，防止淬硬组织形成，减少淬硬倾向；降低氢的危害（促进氢逸出）；减小拘束应力、减少冷裂纹倾向；对厚板还能改善焊缝成形。预热温度按钢种和板厚选定",
+    "k": [
+     "预热",
+     "预热：降低焊接区温度梯度",
+     "减缓冷却速度",
+     "淬硬组织形成",
+     "减少淬硬倾向"
+    ]
+   },
+   {
+    "t": "后热（焊后立即加热保温）：在奥氏体分解温度以下保温，促使扩散氢逸出焊缝（消氢处理，如250℃×6h、350℃×1h），防止氢致延迟裂纹；兼有减小残余应力的作用",
+    "k": [
+     "后热（焊后立即加热保温",
+     "后热",
+     "焊后立即加热保温",
+     "焊后立",
+     "加热保温"
+    ]
+   },
+   {
+    "t": "对于易淬火钢，预热+后热联合使用是防止冷裂纹的主要工艺措施",
+    "k": [
+     "对于易淬火钢"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q344",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "焊接热影响区的韧化途径有哪些？",
+  "full": 10,
+  "pts": [
+   {
+    "t": "控制热输入：避免过大热输入导致过热区晶粒粗大，也避免过快冷却形成淬硬组织，使冷却速度落在最佳区间",
+    "k": [
+     "控制热输入",
+     "冷却速度落在最佳区间"
+    ]
+   },
+   {
+    "t": "预热与多层多道焊：多层焊后层对前层再加热，相当于正火/回火处理，细化晶粒、改善韧性",
+    "k": [
+     "预热与多层多道焊",
+     "相当于正火/回火处理",
+     "细化晶粒",
+     "改善韧性"
+    ]
+   },
+   {
+    "t": "控制母材成分和有害元素：降低C、S、P含量，加入Ti、V、Nb、Mo等细化晶粒元素",
+    "k": [
+     "控制母材成分和有害元素",
+     "P含量",
+     "Ti",
+     "Nb",
+     "Mo等细化晶粒元素"
+    ]
+   },
+   {
+    "t": "焊后热处理：回火或正火消除淬硬组织、细化晶粒",
+    "k": [
+     "焊后热处理",
+     "细化晶粒"
+    ]
+   },
+   {
+    "t": "提高HAZ韧性的冶金措施：如添加微量合金形成弥散质点钉扎晶界、优化焊接线能量匹配",
+    "k": [
+     "提高HAZ韧性的冶金措施",
+     "优化焊接线能量匹配"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q345",
+  "ch": "第四章",
+  "chname": "焊接热影响区的组织和性能",
+  "q": "调质钢（淬火回火钢）焊接热影响区的主要问题及对策是什么？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "主要问题：焊接热循环使调质钢HAZ奥氏体化并快速冷却，过热区形成粗大马氏体等淬硬组织（脆化、硬度高），且破坏母材原有的调质（回火）组织，韧性下降；在拘束应力和氢作用下易产生冷裂纹；多次热循环还会造成局部回火脆化",
+    "k": [
+     "主要问题",
+     "脆化",
+     "硬度高",
+     "且破坏母材原有的调质",
+     "回火"
+    ]
+   },
+   {
+    "t": "对策：控制热输入在较小范围、采用预热（降低冷却速度、减轻淬硬）、严格限制氢（烘干焊材、清理坡口）、焊后立即后热/回火处理恢复韧性与硬度、必要时采用小线能量多层焊使HAZ组织细化",
+    "k": [
+     "对策",
+     "预热",
+     "冷却速度",
+     "减轻淬硬",
+     "严格限制氢"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q346",
+  "ch": "第五章",
+  "chname": "焊接裂纹",
+  "q": "焊接冷裂纹（延迟裂纹）的产生条件有哪些？如何防治？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "三要素：淬硬组织（马氏体等）、扩散氢的聚集、拘束应力（拉应力）三者共同作用，缺一不可；冷裂纹具有延迟性（焊后数小时~数天出现）",
+    "k": [
+     "三要素",
+     "三要素：淬硬组织",
+     "马氏体等",
+     "扩散氢的聚集",
+     "拘束应力"
+    ]
+   },
+   {
+    "t": "防治措施：选用低氢焊条焊剂、烘干焊材、清理坡口油锈，降低氢源；合理预热、控制冷却速度防止淬硬组织（减小淬硬倾向）；控制拘束度、合理坡口设计、减小残余应力；焊后立即后热（消氢处理250℃×6h或350℃×1h）；焊后及时进行消除应力热处理；必要时选用奥氏体焊材（氢扩散系数小）",
+    "k": [
+     "防治措施",
+     "烘干焊材",
+     "清理坡口油锈",
+     "氢源",
+     "合理预热"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q347",
+  "ch": "第五章",
+  "chname": "焊接裂纹",
+  "q": "焊接热裂纹（结晶裂纹）的形成机理及防治措施是什么？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "机理：焊缝凝固结晶后期，晶界残留低熔点液态薄膜（富S、P共晶等），在焊接拉应力作用下沿晶界开裂；产生条件为结晶区间存在液态薄膜+焊接拉应力",
+    "k": [
+     "机理",
+     "机理：焊缝凝固结晶后期",
+     "晶界残留低熔点液态薄膜",
+     "富S",
+     "P共晶等"
+    ]
+   },
+   {
+    "t": "防治：控制焊缝中S、P含量（限制母材焊材、碱性渣脱硫脱磷）；加入细化晶粒元素（Ti、V、Mo、Nb）减少柱状晶、细化晶粒；改善焊缝成形（增大成形系数φ=B/H，避免窄深焊缝）；控制焊接参数（减小电流、降低焊速、调整热输入）改善结晶方向；选用适当的焊接材料降低结晶温度区间；对易裂结构采用预热、减小拘束应力",
+    "k": [
+     "防治",
+     "防治：控制焊缝中S",
+     "P含量",
+     "限制母材焊材",
+     "碱性渣脱硫脱磷"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q348",
+  "ch": "第五章",
+  "chname": "焊接裂纹",
+  "q": "再热裂纹的产生机理是什么？如何防治？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "机理：焊后再次加热（消除应力热处理或多层焊后层受热）时，HAZ粗晶区晶界处沉淀强化元素（Cr、Mo、V、Nb、Ti等）的碳化物在晶界析出、晶内强化减弱，晶界弱化，在残余应力和外加应力作用下沿晶界开裂；多发生于低合金高强钢、珠光体耐热钢厚板接头HAZ粗晶区，加热到600℃左右敏感",
+    "k": [
+     "机理",
+     "机理：焊后再次加热",
+     "Cr",
+     "Mo",
+     "Nb"
+    ]
+   },
+   {
+    "t": "防治：选用再热裂纹敏感性低的母材和焊材（控制Cr、Mo、V含量）；合理设计坡口降低拘束度；选用低预热+合理线能量控制粗晶区晶粒度；避免在不敏感温度区间长时间停留，合理选择消除应力处理温度（避开敏感区）；焊后尽快进行热处理并控制加热速度",
+    "k": [
+     "防治",
+     "控制Cr",
+     "Mo",
+     "V含量",
+     "合理设计坡口降低拘束度"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q349",
+  "ch": "第五章",
+  "chname": "焊接裂纹",
+  "q": "层状撕裂的特征是什么？说明其机理和防治措施。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "特征：厚板（T形接头、角接）焊接时，在焊接收缩产生的z向（板厚方向）拉应力作用下，沿平行于轧制面的夹杂物界面开裂，宏观断口呈阶梯状（平台+剪切壁），故称层状撕裂",
+    "k": [
+     "特征",
+     "特征：厚板",
+     "T形接头",
+     "角接",
+     "焊接时"
+    ]
+   },
+   {
+    "t": "机理：钢中轧制时沿轧向分布的MnS等片状夹杂物使板厚方向（z向）塑韧性极低，焊接z向收缩应力超过夹杂物界面结合强度时，以夹杂物为核心萌生裂纹并沿夹杂物平面扩展，形成平台，相邻平面间以剪切壁连接，呈阶梯状",
+    "k": [
+     "机理",
+     "z向",
+     "塑韧性极低",
+     "以夹杂物",
+     "平台"
+    ]
+   },
+   {
+    "t": "防治：选用z向性能好（硫含量低、夹杂物控制）的钢板；改变接头形式减小z向拘束与应力（如开坡口方向、采用过渡层）；采用低氢焊材、预热降低应力；控制焊接顺序减小收缩应力；对母材进行细化夹杂物处理",
+    "k": [
+     "防治",
+     "防治：选用z向性能好",
+     "硫含量低",
+     "夹杂物控制",
+     "如开坡口方向"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q350",
+  "ch": "第六章",
+  "chname": "钎焊",
+  "q": "简述钎焊原理及钎焊接头的形成过程。",
+  "full": 6,
+  "pts": [
+   {
+    "t": "原理：钎焊时母材不熔化，熔点低于母材的钎料受热熔化，在毛细作用下润湿、铺展并填充母材间隙，液态钎料与固态母材之间通过扩散（钎料组元向母材扩散、母材组元向钎料溶解）形成冶金结合",
+    "k": [
+     "原理",
+     "原理：钎焊时母材不熔化",
+     "毛细作用下润湿",
+     "铺展并填充母材间隙",
+     "钎料组元向母材扩散"
+    ]
+   },
+   {
+    "t": "过程：表面清理（去氧化膜）→装配并加钎料钎剂→加热至钎焊温度（钎料熔化、润湿铺展、填充间隙）→保温（溶解扩散）→冷却凝固形成钎缝",
+    "k": [
+     "过程",
+     "过程：表面清理",
+     "去氧化膜",
+     "钎料熔化",
+     "润湿铺展"
+    ]
+   },
+   {
+    "t": "钎缝组织由钎料固溶体、共晶及扩散层等构成；钎焊接头强度取决于钎缝组织和界面结合质量",
+    "k": [
+     "钎缝组织由钎料固溶体",
+     "共晶及扩散层等构成"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q351",
+  "ch": "第六章",
+  "chname": "钎焊",
+  "q": "影响钎料润湿性的因素有哪些？",
+  "full": 12,
+  "pts": [
+   {
+    "t": "钎料与母材的匹配：能相互溶解、形成合金的体系润湿性好",
+    "k": [
+     "钎料与母材的匹配",
+     "合金的体系润湿性好"
+    ]
+   },
+   {
+    "t": "母材表面状态：氧化膜、油污阻碍润湿，必须清理",
+    "k": [
+     "母材表面状态",
+     "母材表面状态：氧化膜",
+     "油污阻碍润湿",
+     "必须清理"
+    ]
+   },
+   {
+    "t": "温度：温度升高粘度下降、润湿改善，但过高会过烧、流失",
+    "k": [
+     "温度",
+     "温度：温度升高粘度下降",
+     "润湿改善",
+     "但过高会过烧",
+     "流失"
+    ]
+   },
+   {
+    "t": "钎剂作用：清除氧化膜、降低界面张力，改善润湿",
+    "k": [
+     "钎剂作用",
+     "钎剂作用：清除氧化膜",
+     "界面张力",
+     "改善润湿"
+    ]
+   },
+   {
+    "t": "间隙大小：毛细作用随间隙减小增强，但过小阻碍流动",
+    "k": [
+     "间隙大小",
+     "但过小阻碍流动"
+    ]
+   },
+   {
+    "t": "母材与钎料成分（表面张力）：表面张力小、界面张力小则润湿角小。生产中通过清洁表面、选用合适钎剂和钎焊温度控制润湿铺展",
+    "k": [
+     "母材与钎料成分（表面张力",
+     "母材与钎料成分",
+     "表面张力",
+     "表面张力小",
+     "界面张力小则润湿角小"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q352",
+  "ch": "第六章",
+  "chname": "钎焊",
+  "q": "钎剂的作用是什么？钎料选择应遵循哪些原则？",
+  "full": 4,
+  "pts": [
+   {
+    "t": "钎剂作用：清除母材和钎料表面氧化膜；在加热和钎焊过程中保护母材与钎料不再氧化；改善液态钎料对母材的润湿铺展（降低表面张力）；促进钎料与母材的扩散结合",
+    "k": [
+     "钎剂作用",
+     "表面张力",
+     "促进钎料与母材的扩散结合"
+    ]
+   },
+   {
+    "t": "钎料选择原则：钎料熔点应低于母材（一般低数十~数百℃）；与母材有良好的润湿性和相互扩散溶解能力；钎焊接头强度、耐蚀性、导电性等满足使用要求；与母材成分匹配避免形成脆性相；经济性与工艺性（如铜基、银基、铝基钎料按母材选用）",
+    "k": [
+     "钎料选择原则",
+     "一般低数十~数百℃",
+     "钎焊接头强度",
+     "耐蚀性",
+     "导电性等满足使用要求"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "q353",
+  "ch": "第六章",
+  "chname": "钎焊",
+  "q": "钎焊与熔焊相比有何特点？适用于哪些场合？",
+  "full": 6,
+  "pts": [
+   {
+    "t": "特点：母材不熔化，加热温度低（低于母材熔点），热影响区小、变形小，接头尺寸精度高；可焊接异种金属和薄件、精密件；可一次完成多接头（批量高效）；设备简单、易实现自动化",
+    "k": [
+     "特点：母材不熔化",
+     "加热温度低",
+     "低于母材熔点",
+     "热影响区小",
+     "变形小"
+    ]
+   },
+   {
+    "t": "局限：接头强度一般低于母材，对搭接接头和间隙要求严格",
+    "k": [
+     "局限",
+     "对搭接接头和间隙要求严格"
+    ]
+   },
+   {
+    "t": "适用场合：电子元器件与集成电路封装、硬质合金刀具、散热器与换热器、精密仪器、薄壁异种金属结构等，如铝合金散热器、微波器件、航空航天精密组件",
+    "k": [
+     "适用场合",
+     "硬质合金刀具",
+     "散热器与换热器",
+     "精密仪器",
+     "薄壁异种金属结构等"
+    ]
+   }
+  ]
+ }
+];
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => String(s||'').replace(/[\s\u3000]/g,'').replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, m=>'0123456789'['⁰¹²³⁴⁵⁶⁷⁸⁹'.indexOf(m)]).replace(/[×xX*]/g,'x').replace(/\^/g,'').replace(/[～~]/g,'~').replace(/[-－—]/g,'~').replace(/[（）()]/g,'').toLowerCase();
@@ -440,6 +2045,7 @@ function render(){
   else if(route==='notes') el.innerHTML=viewNotes();
   else if(route==='framework') el.innerHTML=viewFramework();
   else if(route==='stars') el.innerHTML=viewStars();
+  else if(route==='essay'){ el.innerHTML=viewEssay(); bindEssay(); }
   updateGauge();
   updateTabs();
   document.querySelectorAll('[data-goto]').forEach(el=>el.addEventListener('click', ()=>{ route=el.dataset.goto; location.hash='#/'+route; render(); }));
@@ -466,6 +2072,332 @@ function openChPanel(){
   $('chpanel').classList.add('show'); $('chmask').classList.add('show');
 }
 function closeChPanel(){ $('chpanel').classList.remove('show'); $('chmask').classList.remove('show'); }
+/* ================= 简答默写 · AI 踩分 ================= */
+const ESSAY_KEY = 'weld_essay_v2';
+const GRADE_CFG_KEY = 'weld_grade_cfg_v1';
+const GRADE_API_DEFAULT = 'https://text.pollinations.ai/openai';
+const EP_AI_COOLDOWN = 46000;
+const EP_COURSE = '材料连接与增材制造原理（焊接原理）';
+const EP_SITE = 'https://sanabesito.github.io/hanjieyuanli-shuati/';
+const EP_CH_LABEL = '章节按绪论到第六章排列，点击切换范围';
+
+function epLoad(key, fallback){
+  try { const raw = localStorage.getItem(key); if (raw) return JSON.parse(raw); } catch(e){}
+  return fallback;
+}
+function epSave(key, val){ try { localStorage.setItem(key, JSON.stringify(val)); } catch(e){} }
+let epRec = epLoad(ESSAY_KEY, {});
+let epCfg = epLoad(GRADE_CFG_KEY, { api: GRADE_API_DEFAULT, key: '', model: 'openai' });
+let epState = { ch: '全部', idx: 0, onlyWeak: false };
+
+const epEsc = s => String(s == null ? '' : s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const epNorm = s => String(s || '').replace(/[\s\u3000]/g, '').replace(/[，。；：、（）()“”"'·\-—~～]/g, '').toLowerCase();
+const epFull = item => item.full || Math.max(2, (item.pts || []).length * 2);
+const epChName = item => item.chname || item.ch || '未分章';
+function epChapters(){
+  const out = ['全部'];
+  ESSAY_AI.forEach(it => { const n = epChName(it); if (!out.includes(n)) out.push(n); });
+  return out;
+}
+function epList(){
+  let list = ESSAY_AI.filter(x => epState.ch === '全部' || epChName(x) === epState.ch);
+  if (epState.onlyWeak) list = list.filter(x => {
+    const r = epRec[x.id];
+    return !r || (r.best || 0) < epFull(x) * 0.6;
+  });
+  return list;
+}
+function epCur(){
+  const list = epList();
+  if (!list.length) return null;
+  if (epState.idx >= list.length) epState.idx = list.length - 1;
+  if (epState.idx < 0) epState.idx = 0;
+  return { list, cur: list[epState.idx] };
+}
+function epRecord(id){
+  return epRec[id] || { best: 0, tries: 0, last: 0, lastAns: '' };
+}
+function epToast(msg){
+  const t = $('ep-toast'); if (!t) return;
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(epToast.timer); epToast.timer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+function epParse(text){
+  let s = String(text || '').trim();
+  s = s.replace(/^```(?:json)?/i, '').replace(/```$/i, '').trim();
+  const a = s.indexOf('{'), b = s.lastIndexOf('}');
+  if (a >= 0 && b > a) s = s.slice(a, b + 1);
+  try {
+    const o = JSON.parse(s);
+    if (o && o.points && !Array.isArray(o.points) && typeof o.points === 'object') {
+      o.points = Object.keys(o.points).map(k => Object.assign({ i: Number(k) }, o.points[k]));
+    }
+    return o;
+  } catch(e){ return null; }
+}
+function epLocal(item, ans){
+  const n = epNorm(ans);
+  const full = epFull(item);
+  const per = 2;
+  const points = item.pts.map(p => {
+    const ks = (p.k || []).map(epNorm).filter(k => k.length >= 2);
+    const hit = ks.filter(k => n.includes(k)).length;
+    let st = 'none';
+    if (hit > 0) st = (ks.length <= 1 || hit >= Math.ceil(ks.length * 0.6)) ? 'full' : 'partial';
+    return { status: st, note: hit ? ('命中 ' + hit + '/' + ks.length + ' 个关键词') : '未命中关键词' };
+  });
+  let score = points.reduce((s, p) => s + (p.status === 'full' ? per : p.status === 'partial' ? per / 2 : 0), 0);
+  if (n.length < 20) score = Math.min(score, full * 0.3);
+  score = Math.round(score * 2) / 2;
+  const hitAny = points.filter(p => p.status !== 'none').length;
+  let comment = '';
+  if (score >= full * 0.85) comment = '要点覆盖比较完整，关键概念基本到位。可以再检查一下逻辑顺序和结论表述。';
+  else if (score >= full * 0.6) comment = '主要采分点已经答到，但还有部分要点不完整。对照下方逐点反馈补齐。';
+  else if (score >= full * 0.3) comment = '答到了一部分关键概念，但采分点覆盖不足。建议按“概念—原因—结果”的顺序重建答案。';
+  else comment = '目前与采分点的对应较少。先看参考要点的分层，再闭卷重写一遍。';
+  comment += ' 本地评分只做关键词覆盖判断，联网提交会得到更接近老师阅卷的语义评分。';
+  return { score, points, comment, source: '本地评分', deduction: 0, fallback: true };
+}
+async function epRemote(item, ans){
+  const cfg = epCfg || {};
+  const api = (cfg.api || GRADE_API_DEFAULT).trim();
+  const model = (cfg.model || 'openai').trim();
+  const full = epFull(item);
+  const per = 2;
+  const sys = '你是' + EP_COURSE + '课程的阅卷老师，按采分点给简答题打分。评分要接近老师阅卷：优先看学生是否答到关键概念和逻辑关系，允许同义替换、合并回答、用自己的话表达，不要求出现原词原句。题目要求“区别/比较/关系”时，学生分别说明两者的定义、决定因素或结果，即视为完成对比，不要求出现“区别”二字。每个采分点都有一个核心判断，学生答出核心判断即给 full，缺少修饰语不扣分；只答对一部分给 partial，完全没答到或答错给 none。不要因为字数少就扣分，也不要因为写得多就给满分。每道题的满分是固定的，不要自行改动。只输出 JSON，不要输出 Markdown 或解释。';
+  const user = [
+    '【题目】' + item.q,
+    '【满分】' + full + ' 分，共 ' + item.pts.length + ' 个采分点，每个采分点 ' + per + ' 分。',
+    '【采分点】',
+    item.pts.map((p, i) => (i + 1) + '. ' + p.t).join('\n'),
+    '【学生答案】',
+    ans,
+    '',
+    '请逐点判断，输出：',
+    '{"points":[{"i":1,"status":"full|partial|none","note":"一句话说明该点答到什么、缺什么"}],"deduction":0,"comment":"给学生的总体反馈，指出最该补的1-2处"}',
+    '要求：points 的顺序和数量必须与采分点一一对应；deduction 是总体表达/逻辑扣分，0 到 3 分；comment 控制在 80 字以内。'
+  ].join('\n');
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 120000);
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (cfg.key && cfg.key.trim()) headers.Authorization = 'Bearer ' + cfg.key.trim();
+    const body = { model: model, messages: [{ role: 'system', content: sys }, { role: 'user', content: user }], temperature: 0.2, max_tokens: 900 };
+    if (api.indexOf('pollinations') >= 0) body.referrer = EP_SITE;
+    const res = await fetch(api, { method: 'POST', headers: headers, body: JSON.stringify(body), signal: controller.signal });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    let content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+    if (Array.isArray(content)) content = content.map(x => x.text || '').join('');
+    const parsed = epParse(content);
+    if (!parsed || !parsed.points) throw new Error('评分格式不符');
+    const mapSt = s => {
+      const v = String(s || '').toLowerCase();
+      if (v === 'full' || v === '完全' || v === '完整' || v === '正确') return 'full';
+      if (v === 'partial' || v === '部分' || v === '一半') return 'partial';
+      return 'none';
+    };
+    const points = item.pts.map((p, i) => {
+      const got = parsed.points.find(x => Number(x.i) === i + 1) || {};
+      return { status: mapSt(got.status), note: String(got.note || '').slice(0, 80) };
+    });
+    // 对比题补偿：学生已分别说明两者定义/决定因素，却未写“区别”二字时，不把对比点判零。
+    if (/区别|比较|关系|异同|不同/.test(item.q)) {
+      const fullCount = points.filter(p => p.status === 'full').length;
+      const diffIdx = item.pts.map((p, i) => /区别|比较|关系|异同|不同|对比/.test(p.t) ? i : -1).filter(i => i >= 0);
+      diffIdx.forEach(i => {
+        if (points[i].status === 'none') {
+          if (fullCount >= item.pts.length - 1) {
+            points[i].status = 'full';
+            points[i].auto = true;
+            points[i].note = '已分别说明两者含义，视为完成对比';
+          } else if (fullCount >= 1) {
+            points[i].status = 'partial';
+            points[i].note = '已答出部分概念，对比关系还可以更明确';
+          }
+        }
+      });
+    }
+    // 采分点里含“取决于/决定/因为”等强因果时，只给定义、没解释决定因素的回答按部分分处理。
+    const causalRe = /取决于|决定|因为|由于|导致|所以|因此|由.{0,20}决定/;
+    const ansNorm = epNorm(ans);
+    points.forEach((p, i) => {
+      if (p.status === 'full' && !p.auto && causalRe.test(item.pts[i].t) && !causalRe.test(ansNorm)) {
+        p.status = 'partial';
+        p.note = (p.note ? p.note + '；' : '') + '缺少决定因素/因果关系的表述，按部分分';
+      }
+    });
+    let score = points.reduce((s, p) => s + (p.status === 'full' ? per : p.status === 'partial' ? per / 2 : 0), 0);
+    const deduction = Math.max(0, Math.min(full * 0.3, Number(parsed.deduction) || 0));
+    score = Math.max(0, Math.min(full, Math.round((score - deduction) * 2) / 2));
+    const comment = String(parsed.comment || '').slice(0, 160) || '已按采分点完成评分。';
+    return { score, points, comment, source: 'AI 评分', deduction, fallback: false };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+function epAiWait(){
+  const last = Number(localStorage.getItem(ESSAY_KEY + '_last_ai') || 0);
+  return Math.max(0, EP_AI_COOLDOWN - (Date.now() - last));
+}
+function epCount(){
+  const ta = $('ep-input'), c = $('ep-count');
+  if (ta && c) c.textContent = ta.value.trim().length + ' 字';
+}
+function epGo(delta){
+  const list = epList(); if (!list.length) return;
+  epState.idx = (epState.idx + delta + list.length) % list.length;
+  epRefresh();
+}
+function epNext(){ epGo(1); }
+function epPrev(){ epGo(-1); }
+function epRandom(){
+  const list = epList(); if (!list.length) return;
+  if (list.length > 1) {
+    let n = epState.idx;
+    while (n === epState.idx) n = Math.floor(Math.random() * list.length);
+    epState.idx = n;
+  }
+  epRefresh();
+}
+function epSetCh(ch){ epState.ch = ch; epState.idx = 0; epRefresh(); }
+function epToggleWeak(){ epState.onlyWeak = !epState.onlyWeak; epState.idx = 0; epRefresh(); }
+function epClearInput(){ const t = $('ep-input'); if (t) { t.value = ''; t.focus(); epCount(); } }
+function epRetry(){ const t = $('ep-input'); if (t) { t.value = ''; t.focus(); epCount(); } const r = $('ep-result'); if (r) r.innerHTML = ''; }
+function epShowRef(){
+  const got = epCur(); if (!got) return;
+  const box = $('ep-result'); if (!box) return;
+  box.innerHTML = '<div class="ep-refcard"><h4>参考要点 · 先自己写，再对照</h4><ol>' + got.cur.pts.map(p => '<li>' + epEsc(p.t) + '</li>').join('') + '</ol></div>';
+}
+function epFinish(item, ans, g){
+  const full = epFull(item);
+  const r = epRecord(item.id);
+  r.tries = (r.tries || 0) + 1;
+  r.last = g.score;
+  r.best = Math.max(r.best || 0, g.score);
+  r.lastAns = ans;
+  epRec[item.id] = r;
+  epSave(ESSAY_KEY, epRec);
+  const pct = full ? Math.round(g.score / full * 100) : 0;
+  const ico = { full: '✓', partial: '◐', none: '✗' };
+  const pts = item.pts.map((p, i) => {
+    const v = g.points[i] || { status: 'none', note: '' };
+    const per = 2;
+    return '<div class="ep-point ' + v.status + '"><div class="ep-point-head"><span class="ep-picon">' + ico[v.status] + '</span><span>采分点 ' + (i + 1) + '</span><span class="ep-pt">' + (v.status === 'full' ? per : v.status === 'partial' ? per / 2 : 0) + ' / ' + per + ' 分</span></div><div class="ep-ptext">' + epEsc(p.t) + '</div>' + (v.note ? '<div class="ep-pnote">' + epEsc(v.note) + '</div>' : '') + '</div>';
+  }).join('');
+  const scoreText = Number.isInteger(g.score) ? g.score : g.score.toFixed(1);
+  const box = $('ep-result');
+  if (!box) return;
+  box.innerHTML = '<div class="ep-score"><div><span>本次得分</span><b>' + scoreText + '<small> / ' + full + '</small></b><span class="ep-source">' + epEsc(g.source) + '</span></div><div><div class="ep-bar"><i style="width:' + pct + '%"></i></div><span style="display:block;margin-top:5px">得分率 ' + pct + '% · 最高 ' + r.best + ' 分 · 第 ' + r.tries + ' 次作答</span></div><div style="text-align:right"><span>最高分</span><b style="display:block;font-size:20px;color:var(--accent)">' + r.best + '</b></div></div>' +
+    '<div class="ep-comment">' + epEsc(g.comment) + '</div>' +
+    (g.deduction ? '<div class="ep-pnote" style="margin-top:6px">总体表达/逻辑扣分：-' + g.deduction + ' 分</div>' : '') +
+    '<div class="ep-points">' + pts + '</div>' +
+    '<div class="ep-actions" style="margin-top:10px"><button class="ep-btn primary" onclick="epRetry()">再默一遍</button><button class="ep-btn ghost" onclick="epNext()">下一题</button><button class="ep-btn ghost" onclick="epShowRef()">对照要点</button><button class="ep-btn ghost" onclick="epRandom()">随机换题</button></div>';
+}
+async function epSubmit(){
+  const got = epCur(); if (!got) return;
+  const item = got.cur;
+  const ta = $('ep-input'); const ans = ta ? ta.value.trim() : '';
+  if (!ans) { epToast('先写点内容再提交'); if (ta) ta.focus(); return; }
+  const btn = $('ep-submit');
+  if (btn) { btn.disabled = true; btn.textContent = '评分中…'; }
+  const box = $('ep-result'); if (box) box.innerHTML = '<div class="ep-loading">正在逐点对照采分点，通常几秒到十几秒…</div>';
+  let g = null;
+  const wait = epAiWait();
+  if (wait > 0) {
+    g = epLocal(item, ans);
+    g.source = '本地评分 · AI 冷却';
+    g.comment += ' 免费 AI 通道约 45 秒一次，还需约 ' + Math.ceil(wait / 1000) + ' 秒；下次提交会优先走 AI。';
+  } else {
+    try {
+      g = await epRemote(item, ans);
+      if (g) try { localStorage.setItem(ESSAY_KEY + '_last_ai', String(Date.now())); } catch(e){}
+    } catch(e){}
+    if (!g) {
+      g = epLocal(item, ans);
+      g.source = '本地评分 · AI 繁忙';
+      g.comment += ' AI 通道繁忙，已用本地关键词评分兜底；稍后重新提交可再走 AI。';
+    }
+  }
+  epFinish(item, ans, g);
+  if (btn) { btn.disabled = false; btn.textContent = '重新评分'; }
+}
+function epOpenCfg(){
+  const el = $('ep-cfg'); if (!el) return;
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+function epSaveCfg(){
+  const api = $('ep-cfg-api'), model = $('ep-cfg-model'), key = $('ep-cfg-key');
+  epCfg = { api: (api && api.value.trim()) || GRADE_API_DEFAULT, model: (model && model.value.trim()) || 'openai', key: key ? key.value.trim() : '' };
+  epSave(GRADE_CFG_KEY, epCfg);
+  const el = $('ep-cfg'); if (el) el.style.display = 'none';
+  epToast('评分设置已保存');
+}
+function viewEssay(){
+  const list = epList();
+  const got = epCur();
+  const recs = Object.values(epRec);
+  const done = recs.length;
+  const avg = done ? (recs.reduce((s, r) => s + (r.best || 0), 0) / done) : 0;
+  const max = done ? Math.max.apply(null, recs.map(r => r.best || 0)) : 0;
+  const weak = ESSAY_AI.filter(x => { const r = epRec[x.id]; return !r || (r.best || 0) < epFull(x) * 0.6; }).length;
+  const chips = epChapters().map(c => {
+    const n = c === '全部' ? ESSAY_AI.length : ESSAY_AI.filter(x => epChName(x) === c).length;
+    return '<button class="ep-chip ' + (epState.ch === c ? 'on' : '') + '" data-ep-ch="' + epEsc(c) + '">' + epEsc(c) + '<em>' + n + '</em></button>';
+  }).join('');
+  let body = '';
+  if (!got) {
+    body = '<div class="ep-card"><div class="ep-empty">当前筛选下没有简答题。<br>换个章节，或关闭“只看未掌握”。</div></div>';
+  } else {
+    const item = got.cur;
+    const r = epRecord(item.id);
+    const full = epFull(item);
+    body = '<div class="ep-card">' +
+      '<div class="ep-cardhead"><span class="ep-badge">第 ' + (epState.idx + 1) + ' / ' + list.length + ' 题</span><span class="ep-badge soft">' + epEsc(epChName(item)) + '</span><span class="ep-badge soft">满分 ' + full + ' 分</span>' + (r.tries ? '<span class="ep-badge last">最高 ' + r.best + ' 分 · 已答 ' + r.tries + ' 次</span>' : '') + '</div>' +
+      '<div class="ep-q">' + epEsc(item.q) + '</div>' +
+      '<div class="ep-hint">闭卷默写，不用逐字背。写出关键概念、逻辑关系和结论即可；提交后按采分点逐条对照，允许同义替换。</div>' +
+      '<textarea id="ep-input" class="ep-textarea" placeholder="在这里默写答案…（Ctrl / ⌘ + Enter 提交）">' + epEsc(r.lastAns || '') + '</textarea>' +
+      '<div class="ep-countrow"><span id="ep-count">' + String((r.lastAns || '').trim().length) + ' 字</span><span>共 ' + item.pts.length + ' 个采分点 · 每点 2 分</span></div>' +
+      '<div class="ep-actions"><button class="ep-btn primary" id="ep-submit">提交评分</button><button class="ep-btn ghost" id="ep-ref">看参考要点</button><button class="ep-btn ghost" id="ep-prev">上一题</button><button class="ep-btn ghost" id="ep-next">下一题</button></div>' +
+      '<div class="ep-actions" style="margin-top:8px"><button class="ep-link" id="ep-random">随机换一题</button><button class="ep-link" id="ep-clear">清空输入</button><button class="ep-link" id="ep-open-cfg">评分设置</button></div>' +
+      '<div id="ep-result" class="ep-result">' + (r.lastAns ? '<div class="ep-pnote">已恢复上次作答，可直接修改后重新评分。</div>' : '') + '</div>' +
+      '<div class="ep-cfg" id="ep-cfg" style="display:none">' +
+        '<label>接口地址（OpenAI 兼容 /chat/completions）</label><input id="ep-cfg-api" value="' + epEsc(epCfg.api || GRADE_API_DEFAULT) + '">' +
+        '<label>模型</label><input id="ep-cfg-model" value="' + epEsc(epCfg.model || 'openai') + '">' +
+        '<label>API Key（可选，默认免费接口不需要）</label><input id="ep-cfg-key" type="password" value="' + epEsc(epCfg.key || '') + '" placeholder="留空即使用免费评分接口">' +
+        '<div class="ep-cfg-note">默认使用免费的 Pollinations 接口，无需 Key，约 45 秒一次；连续提交会自动用本地评分兜底。也可以在这里填 OpenRouter、Groq、Gemini 等兼容接口的免费 Key。</div>' +
+        '<button class="ep-btn primary" id="ep-cfg-save" style="width:100%;margin-top:10px">保存设置</button>' +
+      '</div>' +
+    '</div>';
+  }
+  return '<div class="ep-page">' +
+    '<div class="ep-hero"><div class="ep-kicker">AI 简答默写 · ' + epEsc(EP_COURSE) + '</div><h2>闭卷写一遍，按采分点给分</h2><p>先自己写，提交后由评分模型逐点对照；网络不可用时自动改用本地关键词评分。分数按采分点拆分，不固定满分 100，答对一半也能拿到部分分。</p>' +
+      '<div class="ep-stats"><div class="ep-stat"><b>' + ESSAY_AI.length + '</b><span>道简答题</span></div><div class="ep-stat"><b>' + done + '</b><span>已练题数</span></div><div class="ep-stat"><b>' + (done ? avg.toFixed(1) : '0') + '</b><span>平均最高分</span></div><div class="ep-stat"><b>' + max + '</b><span>单题最高分</span></div></div>' +
+    '</div>' +
+    '<div class="ep-panel"><div class="ep-chips">' + chips + '</div><div class="ep-toolrow"><button class="ep-toggle ' + (epState.onlyWeak ? 'on' : '') + '" id="ep-weak">只看未掌握 · ' + weak + '</button><span class="ep-muted">' + EP_CH_LABEL + '</span></div>' + body + '</div>' +
+    '<div class="ep-toast" id="ep-toast"></div>' +
+  '</div>';
+}
+function bindEssay(){
+  document.querySelectorAll('[data-ep-ch]').forEach(b => b.addEventListener('click', () => epSetCh(b.dataset.epCh)));
+  const weak = $('ep-weak'); if (weak) weak.onclick = epToggleWeak;
+  const sub = $('ep-submit'); if (sub) sub.onclick = epSubmit;
+  const ref = $('ep-ref'); if (ref) ref.onclick = epShowRef;
+  const prev = $('ep-prev'); if (prev) prev.onclick = epPrev;
+  const next = $('ep-next'); if (next) next.onclick = epNext;
+  const rnd = $('ep-random'); if (rnd) rnd.onclick = epRandom;
+  const clr = $('ep-clear'); if (clr) clr.onclick = epClearInput;
+  const cfg = $('ep-open-cfg'); if (cfg) cfg.onclick = epOpenCfg;
+  const save = $('ep-cfg-save'); if (save) save.onclick = epSaveCfg;
+  const ta = $('ep-input');
+  if (ta) {
+    ta.addEventListener('input', epCount);
+    ta.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); epSubmit(); } });
+  }
+}
+
+function epRefresh(){ render(); }
+
 /* ================= 复习讲义 ================= */
 function viewNotes(){
   return `<section class="page">
@@ -488,13 +2420,15 @@ function viewHome(){
   return `<section class="page">
     <div class="hero">
       <div class="kicker">MATERIALS JOINING & ADDITIVE MANUFACTURING</div>
-      <h2>绪论+六章知识点 · ${QUIZ_DATA.length}道复习题 · ${SPEED_DATA.length}条高频速记</h2>
-      <p>覆盖焊接概述、焊接化学冶金、焊接材料、熔池凝固与固态相变、焊接热影响区、焊接裂纹、钎焊。单选/填空快速自测，名词解释与简答题对照记忆、自评掌握，答错自动收入错题本，随时重刷。</p>
+      <h2>绪论+六章知识点 · ${QUIZ_DATA.length}道复习题 · ${SPEED_DATA.length}条高频速记 · ${ESSAY_AI.length}道简答默写</h2>
+      <p>覆盖焊接概述、焊接化学冶金、焊接材料、熔池凝固与固态相变、焊接热影响区、焊接裂纹、钎焊。单选/填空快速自测，名词解释对照记忆；简答题可键盘默写，提交后按采分点逐条打分，答错自动收入错题本，随时重刷。</p>
       <svg viewBox="0 0 220 200" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4b95c"/><stop offset="1" stop-color="#e07b1f"/></linearGradient></defs><g opacity=".55"><rect x="150" y="42" width="32" height="9" rx="2" fill="#9fc3dd"/><rect x="147" y="54" width="38" height="9" rx="2" fill="#a9cbe3"/><rect x="144" y="66" width="44" height="9" rx="2" fill="#b3d0e5"/><rect x="141" y="78" width="50" height="9" rx="2" fill="#bcd6ea"/></g><rect x="16" y="142" width="96" height="14" rx="3" fill="#9fc3dd"/><rect x="108" y="142" width="96" height="14" rx="3" fill="#a9cbe3"/><path d="M96 156 h28 c-4 -4 -4 -10 0 -14 h-28 c4 4 4 10 0 14 z" fill="#dff0fb"/><circle cx="110" cy="148" r="6.5" fill="url(#hg)"/><path d="M103 130 h14 l3 8 h-20 z" fill="#d8e4ee"/><path d="M110 128 v6" stroke="#ffd9a8" stroke-width="2.5" stroke-linecap="round"/><g stroke="#ffd9a8" stroke-width="2.5" stroke-linecap="round" opacity=".95"><path d="M103 122l-5-7M117 122l5-7M95 130l-8-3M125 130l8-3M110 114l2-6"/></g></svg>
     </div>
     <div class="resgrid">
       <button class="rescard" data-goto="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg><div><b class="b">知识框架图</b><span>绪论+六章知识体系 · 考点脉络速览</span></div><em>打开</em></button>
       <button class="rescard" data-goto="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg><div><b class="b">Word 知识点梳理</b><span>完整复习讲义 · 已内嵌本页</span></div><em>打开</em></button>
+    <button class="rescard" data-goto="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><div><b class="b">简答默写 · AI 踩分</b><span>39 道简答 · 逐点对照 · 键盘默写</span></div></button>
+    <button class="rescard" data-goto="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg><div><b class="b">随机刷题</b><span>按章节 / 题型筛选 · 保留作答记录</span></div></button>
     </div>
     <div class="statgrid">
       <div class="statcard" data-goto="quiz"><div class="n">${a}<small> / ${QUIZ_DATA.length}</small></div><div class="l">已答题数</div><div class="bar"><i style="width:${QUIZ_DATA.length?Math.round(a/QUIZ_DATA.length*100):0}%"></i></div></div>
