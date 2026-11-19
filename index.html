@@ -43,7 +43,7 @@ input{font-family:inherit}
 .page{animation:in .18s ease}
 @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media(min-width:900px){
-  .layout{display:grid;grid-template-columns:196px minmax(0,1fr);gap:16px;padding:20px 24px 60px}
+  .layout{display:grid;grid-template-columns:196px minmax(0,1fr);gap:16px;padding:20px 24px 60px;align-items:start}
   .sidebar{display:flex;flex-direction:column;gap:4px}
   .sidebar .sect{font-size:11px;color:var(--muted);letter-spacing:.1em;padding:10px 10px 4px;font-weight:600}
   .navitem{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#2a3c4c;font-size:14px;font-weight:500}
@@ -100,7 +100,13 @@ input{font-family:inherit}
 .hero h2{font-size:22px;margin:8px 0 8px;font-weight:800;line-height:1.3;letter-spacing:.01em}
 .hero p{font-size:14px;color:#cfe2f1;max-width:660px}
 .hero svg{position:absolute;right:-14px;bottom:-26px;opacity:.85;width:230px;height:210px}
-@media(max-width:600px){.hero svg{right:-70px;bottom:-46px;width:180px;opacity:.55}}
+@media(max-width:600px){.hero svg{display:none}}
+.hero-actions{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hero-btn{min-height:44px;padding:0 16px;border-radius:11px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.hero-btn.primary{background:linear-gradient(135deg,#e07b1f,#d9701f);color:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 6px 16px rgba(224,123,31,.35)}
+.hero-btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.36)}
+.hero-btn.ghost:hover{background:rgba(255,255,255,.2)}
+@media(max-width:600px){.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hero-btn{width:100%;padding:0 8px;font-size:13px}}
 @media(max-width:600px){.hero .kicker{letter-spacing:.15em;font-size:11px;white-space:nowrap}}
 .resgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
 @media(min-width:640px){.resgrid{grid-template-columns:repeat(2,1fr)}}
@@ -128,6 +134,7 @@ input{font-family:inherit}
 .statcard .l{font-size:12.5px;color:var(--muted);margin-top:2px}
 .statcard .bar{height:5px;background:#e8eef3;border-radius:3px;margin-top:8px;overflow:hidden}
 .statcard .bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.homefoot{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}.homefoot span{font-weight:600;color:#51697c}.homefoot b{font-weight:600;color:var(--brand)}.homefoot i{font-style:normal;color:#9fb0bf}
 .path{background:var(--tint2);border:1px solid #f3ddc4;border-radius:var(--radius);padding:12px 14px}
 .path .t{font-size:13px;font-weight:700;color:#8a4a12;margin-bottom:6px}
 .path ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px 0}
@@ -135,6 +142,13 @@ input{font-family:inherit}
 .path li:not(:first-child)::before{content:"→";color:#d9701f;margin-right:10px}
 /* ---- quiz ---- */
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.qfilter{flex-wrap:nowrap;gap:8px}
+.fbtn{display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0 11px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:13px;font-weight:600;color:#33475b;white-space:nowrap}
+.fbtn b{font-weight:600;color:var(--brand)}
+.fbtn svg{width:15px;height:15px;color:var(--brand2);flex:none}
+.fsel{min-height:44px;padding:0 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:13px;font-weight:600;color:#33475b;max-width:118px}
+.qcount{margin-left:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:480px){.qfilter{gap:6px}.fbtn{padding:0 9px;font-size:12.5px}.fsel{font-size:12.5px;max-width:104px;padding:0 4px}}
 .seg{display:inline-flex;background:#e9eef3;border-radius:9px;padding:3px;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .seg::-webkit-scrollbar{display:none}
 .seg button{padding:5px 12px;border-radius:7px;font-size:13px;color:#33475b;font-weight:500;white-space:nowrap}
@@ -146,6 +160,7 @@ input{font-family:inherit}
 .tag{font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:20px;background:var(--tint);color:var(--brand)}
 .tag.t2{background:var(--tint2);color:#a2540f}
 .tag.t3{background:#e9f3ec;color:var(--ok)}
+.tag.t4{background:#fdecea;color:var(--bad)}
 .qmeta .no{font-size:12px;color:var(--muted);font-weight:600;margin-right:auto}
 .star{margin-left:auto;color:#c6d2dc;display:flex}
 .star.on{color:#e8a33c}
@@ -179,6 +194,8 @@ input{font-family:inherit}
 .qnav .next.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
 .qnav .next.primary:hover{background:#16415f;color:#fff}
 .qnav .sheetbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:9px;border:1px solid var(--line);font-size:13px;color:#33475b;background:#fff}
+.qnav .prev,.qnav .next,.qnav .sheetbtn{white-space:nowrap;flex:none}
+@media(max-width:900px){.qnav{gap:6px}.qnav .prev,.qnav .next{flex:1;min-height:44px;padding:9px 8px}.qnav .sheetbtn{margin-left:0;min-height:44px;padding:9px 10px}.hintkey{display:none}}
 .hintkey{font-size:11.5px;color:#9aa9b6;margin-left:auto}
 /* ---- sheet ---- */
 .sheetpanel{position:fixed;inset:0;z-index:30;display:none}
@@ -261,12 +278,12 @@ input{font-family:inherit}
 }
 @media(min-width:900px){.quicknav{display:none}}
 @media(max-width:899px){
-  .quicknav{display:flex;overflow-x:auto;gap:8px;padding:0 0 14px;scrollbar-width:none}
+  .quicknav{display:flex;overflow-x:auto;gap:6px;padding:0 0 14px;scrollbar-width:none}
   .quicknav::-webkit-scrollbar{display:none}
-  .quicknav button{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:600;color:#33475b;min-height:44px}
+  .quicknav button{flex:0 0 auto;display:flex;align-items:center;gap:4px;padding:10px 7px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:12.5px;font-weight:600;color:#33475b;min-height:44px}
   .quicknav button:hover{border-color:#b9c8d6}
   .quicknav button.on{background:var(--tint);color:var(--brand);border-color:#b9c8d6}
-  .quicknav svg{width:16px;height:16px;flex:none}
+  .quicknav svg{width:15px;height:15px;flex:none}
   /* 底部 TabBar（移动端） */
   .bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--panel);border-top:1px solid var(--line);display:flex;box-shadow:0 -2px 10px rgba(20,34,46,.08);padding-bottom:env(safe-area-inset-bottom,0)}
   .bottomnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 8px;min-height:44px;font-size:10.5px;color:var(--muted)}
@@ -398,9 +415,13 @@ body{
 .ep-loading{font-size:13px;color:var(--muted);padding:10px 0}
 .ep-empty{font-size:13px;line-height:1.8;color:var(--muted);text-align:center;padding:18px 8px}
 @media(max-width:520px){
-  .ep-hero{padding:18px 16px;border-radius:16px}
-  .ep-hero h2{font-size:20px}
-  .ep-hero p{font-size:13px}
+  .ep-hero{padding:16px 14px;border-radius:16px}
+  .ep-hero h2{font-size:19px;margin:6px 0 4px}
+  .ep-hero p{font-size:12.5px;line-height:1.6}
+  .ep-stats{grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}
+  .ep-stat{padding:7px 8px;border-radius:9px}
+  .ep-stat b{font-size:17px}
+  .ep-stat span{font-size:10px;line-height:1.3}
   .ep-panel{padding:13px}
   .ep-card{padding:13px}
   .ep-q{font-size:16px}
@@ -430,14 +451,14 @@ body{
 <div class="layout">
   <nav class="sidebar" aria-label="主导航">
     <div class="sect">导航</div>
-    <button class="navitem" data-route="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>总览</button>
+    <button class="navitem" data-route="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>首页</button>
     <button class="navitem" data-route="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg>开始刷题</button>
     <button class="navitem" data-route="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg>简答默写</button>
     <button class="navitem" data-route="wrong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 21h16z"/><path d="M12 9v5"/><circle cx="12" cy="17.4" r="1"/></svg>错题本</button>
     <button class="navitem" data-route="speed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>速记卡片</button>
     <button class="navitem" data-route="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>学习统计</button>
     <button class="navitem" data-route="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg>复习讲义</button>
-    <button class="navitem" data-route="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg>知识框架</button>
+    <button class="navitem" data-route="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg>框架</button>
     <button class="navitem" data-route="stars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 18.3l-5.8 2.7 1.1-6.5-4.7-4.6 6.5-1z"/></svg>收藏题目</button>
     <div class="chfilter">
       <div class="lbl">章节筛选</div>
@@ -453,18 +474,20 @@ body{
   </nav>
 
   <nav class="quicknav" aria-label="快捷导航">
-    <button data-qroute="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>总览</button>
+    <button data-qroute="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>首页</button>
+    <button data-qroute="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>简答</button>
     <button data-qroute="speed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>速记</button>
     <button data-qroute="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg>讲义</button>
-    <button data-qroute="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg>知识框架</button>
+    <button data-qroute="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg>框架</button>
   </nav>
 
   <main class="view" id="view" aria-live="polite"></main>
 </div>
 
 <nav class="bottomnav" aria-label="移动导航">
-  <button data-tab="random"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg>随机刷题</button>
+  <button data-tab="random"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg>刷题</button>
   <button data-tab="chapter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>章节</button>
+  <button data-route="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>简答</button>
   <button data-route="wrong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 21h16z"/><path d="M12 9v5"/><circle cx="12" cy="17.4" r="1"/></svg>错题本</button>
   <button data-tab="stars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 18.3l-5.8 2.7 1.1-6.5-4.7-4.6 6.5-1z"/></svg>收藏</button>
   <button data-route="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>统计</button>
@@ -2003,9 +2026,10 @@ const core = s => { const m = String(s||'').split(/[（(]/)[0]; return m.trim();
 let db = load();
 function load(){
   let d; try{ const raw = localStorage.getItem(DB_KEY); if(raw) d = JSON.parse(raw); }catch(e){}
-  if(!d) d = {answers:{}, stars:{}, mastery:{}};
+  if(!d) d = {answers:{}, stars:{}, mastery:{}, wrongs:{}};
+  if(!d.wrongs) d.wrongs = {};
   const migrate = obj => { let touched=false; Object.keys(obj).forEach(k=>{ if(/^\d+$/.test(k)){ const nk='q'+k; if(obj[nk]===undefined){ obj[nk]=obj[k]; delete obj[k]; touched=true; } } }); return touched; };
-  const changed = migrate(d.answers) | migrate(d.stars);
+  const changed = migrate(d.answers) | migrate(d.stars) | migrate(d.wrongs);
   if(changed) try{ localStorage.setItem(DB_KEY, JSON.stringify(d)); }catch(e){}
   return d;
 }
@@ -2374,7 +2398,7 @@ function viewEssay(){
     '</div>';
   }
   return '<div class="ep-page">' +
-    '<div class="ep-hero"><div class="ep-kicker">AI 简答默写 · ' + epEsc(EP_COURSE) + '</div><h2>闭卷写一遍，按采分点给分</h2><p>先自己写，提交后由评分模型逐点对照；网络不可用时自动改用本地关键词评分。分数按采分点拆分，不固定满分 100，答对一半也能拿到部分分。</p>' +
+    '<div class="ep-hero"><div class="ep-kicker">AI 简答默写 · ' + epEsc(EP_COURSE) + '</div><h2>闭卷写一遍，按采分点给分</h2><p>先自己写，提交后逐点对照；AI 不可用时自动本地评分。按采分点拆分，答对一半也有部分分。</p>' +
       '<div class="ep-stats"><div class="ep-stat"><b>' + ESSAY_AI.length + '</b><span>道简答题</span></div><div class="ep-stat"><b>' + done + '</b><span>已练题数</span></div><div class="ep-stat"><b>' + (done ? avg.toFixed(1) : '0') + '</b><span>平均最高分</span></div><div class="ep-stat"><b>' + max + '</b><span>单题最高分</span></div></div>' +
     '</div>' +
     '<div class="ep-panel"><div class="ep-chips">' + chips + '</div><div class="ep-toolrow"><button class="ep-toggle ' + (epState.onlyWeak ? 'on' : '') + '" id="ep-weak">只看未掌握 · ' + weak + '</button><span class="ep-muted">' + EP_CH_LABEL + '</span></div>' + body + '</div>' +
@@ -2422,16 +2446,20 @@ function viewHome(){
   const master=Object.keys(db.mastery).length;
   return `<section class="page">
     <div class="hero">
-      <div class="kicker">MATERIALS JOINING & ADDITIVE MANUFACTURING</div>
-      <h2>绪论+六章知识点 · ${QUIZ_DATA.length}道复习题 · ${SPEED_DATA.length}条高频速记 · ${ESSAY_AI.length}道简答默写</h2>
-      <p>覆盖焊接概述、焊接化学冶金、焊接材料、熔池凝固与固态相变、焊接热影响区、焊接裂纹、钎焊。单选/填空快速自测，名词解释对照记忆；简答题可键盘默写，提交后按采分点逐条打分，答错自动收入错题本，随时重刷。</p>
+      <div class="kicker">焊接原理 · 绪论 + 六章</div>
+      <h2>刷题、背名词、默写简答</h2>
+      <p>${QUIZ_DATA.length} 道复习题 · ${ESSAY_AI.length} 道简答默写 · 按章节筛选，作答记录保存在本机。</p>
+      <div class="hero-actions">
+        <button class="hero-btn primary" data-goto="quiz">开始随机刷题</button>
+        <button class="hero-btn ghost" data-goto="essay">简答默写</button>
+      </div>
       <svg viewBox="0 0 220 200" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4b95c"/><stop offset="1" stop-color="#e07b1f"/></linearGradient></defs><g opacity=".55"><rect x="150" y="42" width="32" height="9" rx="2" fill="#9fc3dd"/><rect x="147" y="54" width="38" height="9" rx="2" fill="#a9cbe3"/><rect x="144" y="66" width="44" height="9" rx="2" fill="#b3d0e5"/><rect x="141" y="78" width="50" height="9" rx="2" fill="#bcd6ea"/></g><rect x="16" y="142" width="96" height="14" rx="3" fill="#9fc3dd"/><rect x="108" y="142" width="96" height="14" rx="3" fill="#a9cbe3"/><path d="M96 156 h28 c-4 -4 -4 -10 0 -14 h-28 c4 4 4 10 0 14 z" fill="#dff0fb"/><circle cx="110" cy="148" r="6.5" fill="url(#hg)"/><path d="M103 130 h14 l3 8 h-20 z" fill="#d8e4ee"/><path d="M110 128 v6" stroke="#ffd9a8" stroke-width="2.5" stroke-linecap="round"/><g stroke="#ffd9a8" stroke-width="2.5" stroke-linecap="round" opacity=".95"><path d="M103 122l-5-7M117 122l5-7M95 130l-8-3M125 130l8-3M110 114l2-6"/></g></svg>
     </div>
     <div class="resgrid">
+      <button class="rescard" data-goto="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><div><b class="b">简答默写 · AI 踩分</b><span>39 道简答 · 逐点对照 · 键盘默写</span></div><em>进入</em></button>
+      <button class="rescard" data-goto="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg><div><b class="b">随机刷题</b><span>按章节 / 题型筛选 · 保留作答记录</span></div><em>进入</em></button>
       <button class="rescard" data-goto="framework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 6.8 10.6 15.5M16 6.8 13.4 15.5M8.4 6h7.2M10.8 15.8h2.4"/></svg><div><b class="b">知识框架图</b><span>绪论+六章知识体系 · 考点脉络速览</span></div><em>打开</em></button>
       <button class="rescard" data-goto="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h4"/><path d="M9 13h7M9 16.5h7"/></svg><div><b class="b">Word 知识点梳理</b><span>完整复习讲义 · 已内嵌本页</span></div><em>打开</em></button>
-    <button class="rescard" data-goto="essay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><div><b class="b">简答默写 · AI 踩分</b><span>39 道简答 · 逐点对照 · 键盘默写</span></div></button>
-    <button class="rescard" data-goto="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="18" r="1.4"/></svg><div><b class="b">随机刷题</b><span>按章节 / 题型筛选 · 保留作答记录</span></div></button>
     </div>
     <div class="statgrid">
       <div class="statcard" data-goto="quiz"><div class="n">${a}<small> / ${QUIZ_DATA.length}</small></div><div class="l">已答题数</div><div class="bar"><i style="width:${QUIZ_DATA.length?Math.round(a/QUIZ_DATA.length*100):0}%"></i></div></div>
@@ -2439,7 +2467,7 @@ function viewHome(){
       <div class="statcard" data-goto="wrong"><div class="n">${wrong}</div><div class="l">错题待重刷</div><div class="bar"><i style="width:${wrong?Math.min(100,Math.round(wrong/QUIZ_DATA.length*300)):0}%;background:var(--bad)"></i></div></div>
       <div class="statcard" data-goto="speed"><div class="n">${master}<small> / ${SPEED_DATA.length}</small></div><div class="l">已掌握速记</div><div class="bar"><i style="width:${SPEED_DATA.length?Math.round(master/SPEED_DATA.length*100):0}%;background:var(--brand2)"></i></div></div>
     </div>
-    <div class="path"><div class="t">建议复习路径</div><ol><li>先看知识框架 / 复习讲义（首页一键直达，已内嵌本工具）</li><li>刷题自测，错题自动入错题本</li><li>用速记卡片做考前快速回顾</li></ol></div>
+    <div class="homefoot"><span>建议顺序</span><b>刷题</b><i>→</i><b>速记</b><i>→</i><b>简答默写</b><i>→</i><b>错题重刷</b></div>
   </section>`;
 }
 /* ================= 刷题 ================= */
@@ -2481,16 +2509,17 @@ function viewQuiz(){
   const fb = done ? (isReview ? `<div class="feedback ${state?'ok':'no'} show"><b>${state?'已掌握':'已加入错题本'}</b><span>${state?'':'需加强的题目可在错题本集中复习'}</span></div>`
     : `<div class="feedback ${state?'ok':'no'} show"><b>${state?'回答正确':'回答错误'}</b><span>${state?'':'正确答案：'}${state?'':esc(q.ansText||q.ans)}</span></div>`) : '';
   return `<section class="page">
-    <div class="toolbar">
-      <div class="seg" id="seg-ch">${CHS.map(c=>`<button data-ch="${c}" class="${filters.ch===c?'on':''}">${c==='全部'?'全部':CHSHORT[c]+'章'}</button>`).join('')}</div>
-      <div class="seg" id="seg-type">${['全部','mcq','fill','term','essay'].map(t=>`<button data-type="${t}" class="${filters.type===t?'on':''}">${TYPES[t]}</button>`).join('')}</div>
-      <div class="seg" id="seg-order">${['顺序','随机'].map(o=>`<button data-order="${o}" class="${filters.order===o?'on':''}">${o}</button>`).join('')}</div>
-      <div class="progressline"><span id="q-pos">${session.idx+1} / ${session.list.length}</span></div>
+    <div class="toolbar qfilter">
+      <button class="fbtn" id="open-ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><b>${filters.ch==='全部'?'全部章节':filters.ch}</b><span>▾</span></button>
+      <select class="fsel" id="f-type" aria-label="题型筛选">${['全部','mcq','fill','term','essay'].map(t=>`<option value="${t}" ${filters.type===t?'selected':''}>${TYPES[t]}</option>`).join('')}</select>
+      <button class="fbtn" id="f-order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 12h7M4 17h5"/><path d="m15 15 3 3 3-3"/><path d="M18 6v12"/></svg><b>${filters.order}</b></button>
+      <span class="qcount" id="q-pos">${session.idx+1} / ${session.list.length}</span>
     </div>
     <div class="qcard">
       <div class="qmeta">
         <span class="tag">${session.wrongMode?'错题重刷':q.ch}</span>
         <span class="tag ${q.type==='mcq'?'':'t3'}">${q.type==='mcq'?'单项选择题':(q.type==='fill'?'填空题':(q.type==='term'?'名词解释':'简答题'))}</span>
+        <span class="tag ${(db.wrongs[q.id]||0)?'t4':''}">错 ${db.wrongs[q.id]||0} 次</span>
         <span class="no">题库第 ${i+1} 题</span>
         <button class="star ${db.stars[q.id]?'on':''}" data-star="${q.id}" aria-label="收藏"><svg viewBox="0 0 24 24" width="19" height="19" fill="${db.stars[q.id]?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 18.3l-5.8 2.7 1.1-6.5-4.7-4.6 6.5-1z"/></svg></button>
       </div>
@@ -2510,19 +2539,19 @@ function viewQuiz(){
 }
 function bindQuiz(){
   const i = session.list[session.idx], q = QUIZ_DATA[i];
-  $('seg-ch').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b||!b.dataset.ch)return; filters.ch=b.dataset.ch; buildSession(false); render(); });
-  $('seg-type').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b||!b.dataset.type)return; filters.type=b.dataset.type; buildSession(false); render(); });
-  $('seg-order').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b||!b.dataset.order)return; filters.order=b.dataset.order; buildSession(false); render(); });
+  $('open-ch').addEventListener('click', openChPanel);
+  $('f-type').addEventListener('change', e=>{ filters.type=e.target.value; buildSession(false); render(); });
+  $('f-order').addEventListener('click', ()=>{ filters.order = filters.order==='随机'?'顺序':'随机'; buildSession(false); render(); });
   $('qprev').addEventListener('click', ()=>{ if(session.idx>0){ session.idx--; render(); } });
   $('qnext').addEventListener('click', ()=>{ if(session.idx<session.list.length-1){ session.idx++; render(); } else { session=null; route='stats'; render(); } });
   $('qsheet').addEventListener('click', openSheet);
   const star=document.querySelector('.star'); if(star) star.addEventListener('click', ()=>{ db.stars[q.id]=!db.stars[q.id]; save(); render(); });
   const reveal=$('reveal'); if(reveal) reveal.addEventListener('click', ()=>{ $('anscard').classList.toggle('show'); reveal.classList.toggle('on'); reveal.textContent=$('anscard').classList.contains('show')?'收起参考答案':'查看参考答案'; });
-  document.querySelectorAll('[data-selfev]').forEach(b=>b.addEventListener('click', ()=>{ db.answers[q.id]=b.dataset.selfev; save(); render(); }));
-  document.querySelectorAll('.opt').forEach(o=>o.addEventListener('click', ()=>{ if(db.answers[q.id]!==undefined&&db.answers[q.id]!=='')return; db.answers[q.id]=o.dataset.opt; save(); render(); }));
+  document.querySelectorAll('[data-selfev]').forEach(b=>b.addEventListener('click', ()=>{ const ev=b.dataset.selfev; if(ev==='no'&&db.answers[q.id]!=='no') db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; db.answers[q.id]=ev; save(); render(); }));
+  document.querySelectorAll('.opt').forEach(o=>o.addEventListener('click', ()=>{ if(db.answers[q.id]!==undefined&&db.answers[q.id]!=='')return; const chosen=o.dataset.opt; db.answers[q.id]=chosen; if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; save(); render(); }));
   const fillin=$('fillin'), fillgo=$('fillgo');
   if(fillin&&fillgo){
-    fillgo.addEventListener('click', ()=>{ const v=fillin.value; if(!v.trim())return; db.answers[q.id]=v.trim(); save(); render(); });
+    fillgo.addEventListener('click', ()=>{ const v=fillin.value; if(!v.trim())return; db.answers[q.id]=v.trim(); if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; save(); render(); });
     fillin.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); fillgo.click(); } });
   }
   const key = e => {
@@ -2542,7 +2571,7 @@ function viewStars(){
     const q=QUIZ_DATA[i];
     const st=isCorrect(i);
     const state = st===null?'未答':(st?'已答对':'已答错');
-    return `<div class="wrow starlist" data-goto-star="${i}"><span class="tag">${q.ch}</span><span class="qt">${esc(q.q)}</span><span class="ans">${state}</span></div>`;
+    return `<div class="wrow starlist" data-goto-star="${i}"><span class="tag">${q.ch}</span><span class="tag t4">错 ${db.wrongs[q.id]||0} 次</span><span class="qt">${esc(q.q)}</span><span class="ans">${state}</span></div>`;
   }).join('');
   return `<section class="page">
     <div class="hdr"><h2>收藏题目</h2><span class="sub">共 ${ids.length} 道 · 点击题目即可进入复习</span></div>
@@ -2557,7 +2586,7 @@ function viewWrong(){
     const q=QUIZ_DATA[i];
     const isRev = q.type==='term'||q.type==='essay';
     const ansShort = (q.ans||'').length>44 ? q.ans.slice(0,44)+'…' : (q.ans||'');
-    return `<div class="wrow" data-goto-wrong="${i}"><span class="tag">${q.ch}</span><span class="qt">${esc(q.q)}</span><span class="ans">${isRev?'自评需加强 · ':''}答案 <b>${esc(isRev?ansShort:(q.ansText||q.ans))}</b></span></div>`;
+    return `<div class="wrow" data-goto-wrong="${i}"><span class="tag">${q.ch}</span><span class="tag t4">错 ${db.wrongs[q.id]||0} 次</span><span class="qt">${esc(q.q)}</span><span class="ans">${isRev?'自评需加强 · ':''}答案 <b>${esc(isRev?ansShort:(q.ansText||q.ans))}</b></span></div>`;
   }).join('');
   return `<section class="page">
     <div class="hdr"><h2>错题本</h2><span class="sub">共 ${ids.length} 道答错题目，可集中重刷</span><div class="sp"><button class="danger" id="clearwrong">清空错题记录</button><button class="iconbtn" id="redo" aria-label="重刷错题"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button></div></div>
@@ -2639,8 +2668,8 @@ document.addEventListener('click', e=>{
   const cell = e.target.closest('[data-cell]');
   if(cell){ const id=Number(cell.dataset.cell); const pos=session?session.list.indexOf(id):-1; if(pos>=0){ session.idx=pos; closeSheet(); render(); } }
   if(e.target.closest('[data-close="sheet"]')) closeSheet();
-  const clearwrong=$('clearwrong'); if(clearwrong&&e.target===clearwrong){ db.answers={}; save(); render(); }
-  const resetall=$('resetall'); if(resetall&&e.target===resetall){ db.answers={}; db.stars={}; db.mastery={}; save(); render(); }
+  const clearwrong=$('clearwrong'); if(clearwrong&&e.target===clearwrong){ const ids=wrongIds(); ids.forEach(i=>{ delete db.wrongs[QUIZ_DATA[i].id]; }); db.answers={}; save(); render(); }
+  const resetall=$('resetall'); if(resetall&&e.target===resetall){ db.answers={}; db.stars={}; db.mastery={}; db.wrongs={}; save(); render(); }
   const redo=$('redo'); if(redo&&e.target===redo){ buildSession(true); if(session.list.length){ route='quiz'; location.hash='#/quiz'; } else { render(); } return; }
   const btn=$('btn-reset'); if(btn&&e.target===btn){ if(confirm('确定重置全部学习进度？此操作不可撤销。')){ db.answers={}; db.stars={}; db.mastery={}; save(); render(); } }
 });
