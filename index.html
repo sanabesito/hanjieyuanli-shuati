@@ -220,6 +220,52 @@ input{font-family:inherit}
 .wrow .qt{font-size:14px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#33475b}
 .wrow .ans{font-size:12px;color:var(--muted);flex:none}
 .wrow .ans b{color:var(--ok)}
+
+/* ---- wrong book redesigned ---- */
+.wsum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.wsum > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center;box-shadow:var(--shadow)}
+.wsum b{display:block;font-size:22px;line-height:1.1;color:var(--brand);font-variant-numeric:tabular-nums}
+.wsum span{display:block;margin-top:3px;font-size:11px;color:var(--muted)}
+.wscope{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px;box-shadow:var(--shadow)}
+.wscopehead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wscopehead b{font-size:14px;color:var(--ink)}
+.wscopehead span{flex:none;padding:3px 9px;border-radius:20px;background:var(--tint);color:var(--brand);font-size:12px;font-weight:700}
+.wselects{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 8px}
+.wfield span{display:block;margin:0 0 4px 2px;font-size:11px;font-weight:700;color:var(--muted)}
+.wfield select{width:100%;min-height:44px;padding:0 8px;border:1px solid var(--line);border-radius:10px;background:#f8fafc;color:#33475b;font-size:13.5px;font-weight:600}
+.wscopehint{margin:2px 0 10px;font-size:11.5px;line-height:1.55;color:var(--muted)}
+.wstartbtn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:48px;border:0;border-radius:11px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-size:14px;font-weight:700;box-shadow:0 6px 16px rgba(28,90,134,.18)}
+.wstartbtn span{font-size:17px;line-height:1}
+.wstartbtn:disabled{background:#e7edf3;color:#8a9aa8;box-shadow:none;cursor:not-allowed}
+.wstartbtn[data-goto]{max-width:240px;margin:16px auto 0}
+.wlisthead{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:14px 2px 8px}
+.wlisthead b{font-size:14px}
+.wlisthead span{font-size:11.5px;color:var(--muted)}
+.wrongcards{display:flex;flex-direction:column;gap:8px}
+.wcard{display:block;width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:border-color .12s,transform .12s,box-shadow .12s}
+.wcard:hover{border-color:#9fc0da;transform:translateY(-1px);box-shadow:var(--shadow)}
+.wctop{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.wctop .tag{flex:none}
+.wgo{margin-left:auto;display:inline-flex;align-items:center;gap:2px;font-size:11.5px;font-weight:600;color:var(--brand);white-space:nowrap}
+.wcq{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:7px 0 5px;font-size:13.5px;line-height:1.55;color:#26394a;word-break:break-word}
+.wans{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11.5px;line-height:1.5;color:var(--muted);word-break:break-word}
+.wans span{margin-right:5px;font-weight:700;color:#7b8b99}
+.wans b{font-weight:600;color:var(--ok)}
+.wempty{padding:28px 12px;border:1px dashed var(--line);border-radius:12px;background:#fff;text-align:center;color:var(--muted)}
+.wempty .big{margin-bottom:4px;font-size:28px;color:var(--brand)}
+.wempty b{display:block;margin-bottom:4px;color:var(--ink)}
+.wempty span{font-size:12px}
+.wfoot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--muted)}
+.wfoot span{flex:1;min-width:180px;line-height:1.5}
+.wclear{min-height:44px;padding:0 14px;border:1px solid #e3beb8;border-radius:9px;background:#fff;color:var(--bad);font-size:12px;font-weight:700}
+.wclear:hover{background:#fff7f5;border-color:#d99a91}
+.wrongbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 10px;margin-bottom:12px;border:1px solid #cfe0ec;border-radius:10px;background:var(--tint)}
+.wrongctx{display:flex;align-items:center;gap:6px;min-width:0}
+.wrongctx i{flex:none;padding:2px 8px;border-radius:20px;background:#fff;color:var(--brand);font-size:11px;font-style:normal;font-weight:700}
+.wrongctx b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px;font-size:13px;color:#26394a}
+.wrongbar .qcount{margin-left:auto}
+@media(max-width:480px){.wrongbar{gap:6px;padding:8px}.wrongctx b{max-width:125px}.wrongbar .fbtn{padding:0 8px;font-size:12px}}
+@media(max-width:340px){.wselects{grid-template-columns:1fr}.qfilter{flex-wrap:wrap}.qfilter .qcount{margin-left:0;width:100%;text-align:right}}
 .empty{padding:40px 16px;text-align:center;color:var(--muted)}
 .empty .big{font-size:34px;margin-bottom:6px}
 .speedcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;min-height:180px;display:flex;flex-direction:column}
@@ -1158,6 +1204,7 @@ function updateGauge(){
 }
 let session = null; // {list:[...], idx, title, wrongMode}
 let filters = {ch:'全部', type:'全部', order:'顺序'};
+let wfilter = {ch:'全部', type:'全部'};
 let speedIdx = 0;
 const IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile|MicroMessenger|Opera Mini/i.test(navigator.userAgent) || innerWidth<=900;
 if(IS_MOBILE && !location.hash){ filters.order='随机'; } // 移动端默认随机刷题
@@ -1165,12 +1212,13 @@ let route = location.hash.replace('#/','') || (IS_MOBILE ? 'quiz' : 'home');
 
 function render(){
   const el = $('view');
-  document.querySelectorAll('[data-route]').forEach(b=>b.classList.toggle('on', b.dataset.route===route));
+  const wrongRunning = route==='quiz' && session && session.wrongMode;
+  document.querySelectorAll('[data-route]').forEach(b=>b.classList.toggle('on', b.dataset.route===route || (b.dataset.route==='wrong' && wrongRunning)));
   document.querySelectorAll('.chfilter button').forEach(b=>b.classList.toggle('on', b.dataset.ch===filters.ch));
   document.querySelectorAll('.quicknav button').forEach(b=>b.classList.toggle('on', b.dataset.qroute===route));
   if(route==='home') el.innerHTML=viewHome();
   else if(route==='quiz') { if(!session) buildSession(false); el.innerHTML=viewQuiz(); bindQuiz(); }
-  else if(route==='wrong') el.innerHTML=viewWrong();
+  else if(route==='wrong') { el.innerHTML=viewWrong(); bindWrong(); }
   else if(route==='speed') { if(speedIdx>=SPEED_DATA.length)speedIdx=0; el.innerHTML=viewSpeed(); bindSpeed(); }
   else if(route==='stats') el.innerHTML=viewStats();
   else if(route==='notes') el.innerHTML=viewNotes();
@@ -1180,16 +1228,17 @@ function render(){
   updateGauge();
   updateTabs();
   document.querySelectorAll('[data-goto]').forEach(el=>el.addEventListener('click', ()=>{ route=el.dataset.goto; location.hash='#/'+route; render(); }));
-  document.querySelectorAll('[data-goto-wrong]').forEach(el=>el.addEventListener('click', ()=>{ buildSession(true); session.list=[Number(el.dataset.gotoWrong)]; session.idx=0; route='quiz'; location.hash='#/quiz'; render(); }));
+  document.querySelectorAll('[data-goto-wrong]').forEach(el=>el.addEventListener('click', ()=>{ const wi=Number(el.dataset.gotoWrong); const wq=QUIZ_DATA[wi]; startWrongSession([wi], '单题 · '+(wq?wq.ch:'')); }));
   document.querySelectorAll('[data-goto-star]').forEach(el=>el.addEventListener('click', ()=>{ buildSession(false); session.list=[Number(el.dataset.gotoStar)]; session.idx=0; route='quiz'; location.hash='#/quiz'; render(); }));
 }
 function updateTabs(){
   document.querySelectorAll('.bottomnav button').forEach(b=>{
     let on=false;
-    if(b.dataset.tab==='random') on = (route==='quiz' && filters.order==='随机');
-    else if(b.dataset.tab==='chapter') on = (route==='quiz' && filters.order!=='随机');
+    const wrongMode = route==='quiz' && session && session.wrongMode;
+    if(b.dataset.tab==='random') on = (route==='quiz' && filters.order==='随机' && !wrongMode);
+    else if(b.dataset.tab==='chapter') on = (route==='quiz' && filters.order!=='随机' && !wrongMode);
     else if(b.dataset.tab==='stars') on = (route==='stars');
-    else if(b.dataset.route) on = (b.dataset.route===route);
+    else if(b.dataset.route) on = (b.dataset.route===route || (b.dataset.route==='wrong' && wrongMode));
     b.classList.toggle('on', on);
   });
 }
@@ -1605,19 +1654,36 @@ function buildSession(fromWrong){
     QUIZ_DATA.forEach((q,i)=>{ if(filters.ch==='全部'||q.ch===filters.ch) if(filters.type==='全部'||q.type===filters.type) base.push(i); });
     if(filters.order==='随机') base = shuffle(base);
   }
-  session = {list:base, idx:0, wrongMode, title: wrongMode?'错题重刷':('刷题 · '+(filters.ch==='全部'?'全部章节':filters.ch)+(filters.type==='全部'?'':TYPES[filters.type]))};
+  session = {list:base, idx:0, wrongMode, title: wrongMode?'错题重刷':('刷题 · '+(filters.ch==='全部'?'全部章节':filters.ch)+(filters.type==='全部'?'':TYPES[filters.type])), scopeLabel: wrongMode?'全部错题':'', retryDone:{}};
+}
+function wrongScopeList(){
+  return wrongIds().filter(i=>{
+    const q=QUIZ_DATA[i];
+    return (wfilter.ch==='全部'||q.ch===wfilter.ch) && (wfilter.type==='全部'||q.type===wfilter.type);
+  }).sort((a,b)=>(db.wrongs[QUIZ_DATA[b].id]||0)-(db.wrongs[QUIZ_DATA[a].id]||0)||a-b);
+}
+function wrongScopeLabel(){
+  const ch=wfilter.ch==='全部'?'全部章节':wfilter.ch;
+  const ty=wfilter.type==='全部'?'':TYPES[wfilter.type];
+  return ty?ch+' · '+ty:ch;
+}
+function startWrongSession(list,label){
+  if(!list||!list.length) return false;
+  session={list:list.slice(),idx:0,wrongMode:true,title:'错题重刷',scopeLabel:label||'全部错题',retryDone:{}};
+  route='quiz'; location.hash='#/quiz'; render(); return true;
 }
 function shuffle(a){ const r=a.slice(); for(let i=r.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [r[i],r[j]]=[r[j],r[i]]; } return r; }
 function viewQuiz(){
   if(!session) return '';
   if(!session.list.length){
     const why = session.wrongMode ? '太棒了，当前没有错题。' : '当前筛选条件下没有题目。';
-    return `<div class="empty"><div class="big">✓</div>${why}${session.wrongMode?'':'<br>请调整章节或题型筛选。'}</div>`;
+    return `<section class="page"><div class="empty"><div class="big">✓</div>${why}${session.wrongMode?'<br><button class="wstartbtn" data-goto="wrong">返回错题本</button>':'<br>请调整章节或题型筛选。'}</div></section>`;
   }
   if(session.idx>=session.list.length) session.idx=0;
   const i = session.list[session.idx], q = QUIZ_DATA[i];
   const state = isCorrect(i);
-  const done = db.answers[q.id]!==undefined && db.answers[q.id]!=='';
+  const hasAnswer = db.answers[q.id]!==undefined && db.answers[q.id]!=='';
+  const done = session.wrongMode ? (hasAnswer && !!(session.retryDone&&session.retryDone[q.id])) : hasAnswer;
   const isReview = q.type==='term'||q.type==='essay';
   const opts = (!isReview && q.type==='mcq') ? q.options.map((o,k)=>{
     const letter = 'ABCD'[k]; let cls='';
@@ -1631,20 +1697,26 @@ function viewQuiz(){
     <div class="selfev"><button class="ok ${done&&db.answers[q.id]==='ok'?'chosen':''}" data-selfev="ok">记住了</button><button class="no ${done&&db.answers[q.id]==='no'?'chosen':''}" data-selfev="no">还需加强</button></div>
     <p class="revtip">先尝试回忆再对照答案；自评\u201C还需加强\u201D将自动收入错题本，可随时重新自评。</p>
   </div>` : '';
+  const lastQ = session.idx===session.list.length-1;
+  const nextLabel = lastQ ? (session.wrongMode?'完成重刷':'完成本组') : (done?'下一题':'跳过');
   const fb = done ? (isReview ? `<div class="feedback ${state?'ok':'no'} show"><b>${state?'已掌握':'已加入错题本'}</b><span>${state?'':'需加强的题目可在错题本集中复习'}</span></div>`
     : `<div class="feedback ${state?'ok':'no'} show"><b>${state?'回答正确':'回答错误'}</b><span>${state?'':'正确答案：'}${state?'':esc(q.ansText||q.ans)}</span></div>`) : '';
   return `<section class="page">
-    <div class="toolbar qfilter">
+    ${session.wrongMode ? `<div class="toolbar wrongbar">
+      <span class="wrongctx"><i>错题重刷</i><b>${esc(session.scopeLabel||'全部错题')}</b></span>
+      <span class="qcount" id="q-pos">${session.idx+1} / ${session.list.length}</span>
+      <button class="fbtn" id="backwrong">返回错题本</button>
+    </div>` : `<div class="toolbar qfilter">
       <button class="fbtn" id="open-ch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><b>${filters.ch==='全部'?'全部章节':filters.ch}</b><span>▾</span></button>
       <select class="fsel" id="f-type" aria-label="题型筛选">${['全部','mcq','fill','term','essay'].map(t=>`<option value="${t}" ${filters.type===t?'selected':''}>${TYPES[t]}</option>`).join('')}</select>
       <button class="fbtn" id="f-order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 12h7M4 17h5"/><path d="m15 15 3 3 3-3"/><path d="M18 6v12"/></svg><b>${filters.order}</b></button>
       <span class="qcount" id="q-pos">${session.idx+1} / ${session.list.length}</span>
-    </div>
+    </div>`}
     <div class="qcard">
       <div class="qmeta">
         <span class="tag">${session.wrongMode?'错题重刷':q.ch}</span>
         <span class="tag ${q.type==='mcq'?'':'t3'}">${q.type==='mcq'?'单项选择题':(q.type==='fill'?'填空题':(q.type==='term'?'名词解释':'简答题'))}</span>
-        <span class="tag ${(db.wrongs[q.id]||0)?'t4':''}">错 ${db.wrongs[q.id]||0} 次</span>
+        <span class="tag ${(db.wrongs[q.id]||0)?'t4':''}">${db.wrongs[q.id]?`错 ${db.wrongs[q.id]} 次`:'待重刷'}</span>
         <span class="no">题库第 ${i+1} 题</span>
         <button class="star ${db.stars[q.id]?'on':''}" data-star="${q.id}" aria-label="收藏"><svg viewBox="0 0 24 24" width="19" height="19" fill="${db.stars[q.id]?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 18.3l-5.8 2.7 1.1-6.5-4.7-4.6 6.5-1z"/></svg></button>
       </div>
@@ -1656,33 +1728,38 @@ function viewQuiz(){
       <div class="qnav">
         <button class="prev" id="qprev">上一题</button>
         <button class="sheetbtn" id="qsheet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>答题卡</button>
-        <button class="next ${done?'primary':''}" id="qnext">${done?'下一题':'跳过'}</button>
+        <button class="next ${done||lastQ?'primary':''}" id="qnext">${nextLabel}</button>
         <span class="hintkey">${isReview?'空格 展开答案 · Enter 下一题':'快捷键 1-4 作答 · Enter 下一题'}</span>
       </div>
     </div>
   </section>`;
 }
 function bindQuiz(){
+  if(!session||!session.list.length) return;
   const i = session.list[session.idx], q = QUIZ_DATA[i];
-  $('open-ch').addEventListener('click', openChPanel);
-  $('f-type').addEventListener('change', e=>{ filters.type=e.target.value; buildSession(false); render(); });
-  $('f-order').addEventListener('click', ()=>{ filters.order = filters.order==='随机'?'顺序':'随机'; buildSession(false); render(); });
+  const answeredNow = db.answers[q.id]!==undefined && db.answers[q.id]!=='';
+  const doneNow = session.wrongMode ? (answeredNow && !!(session.retryDone&&session.retryDone[q.id])) : answeredNow;
+  const markDone = ()=>{ if(session.wrongMode){ session.retryDone=session.retryDone||{}; session.retryDone[q.id]=true; } };
+  const openCh=$('open-ch'); if(openCh) openCh.addEventListener('click', openChPanel);
+  const ftype=$('f-type'); if(ftype) ftype.addEventListener('change', e=>{ filters.type=e.target.value; buildSession(false); render(); });
+  const forder=$('f-order'); if(forder) forder.addEventListener('click', ()=>{ filters.order = filters.order==='随机'?'顺序':'随机'; buildSession(false); render(); });
+  const backwrong=$('backwrong'); if(backwrong) backwrong.addEventListener('click', ()=>{ session=null; route='wrong'; location.hash='#/wrong'; render(); });
   $('qprev').addEventListener('click', ()=>{ if(session.idx>0){ session.idx--; render(); } });
-  $('qnext').addEventListener('click', ()=>{ if(session.idx<session.list.length-1){ session.idx++; render(); } else { session=null; route='stats'; render(); } });
+  $('qnext').addEventListener('click', ()=>{ if(session.idx<session.list.length-1){ session.idx++; render(); } else { const wasWrong=session.wrongMode; session=null; route=wasWrong?'wrong':'stats'; location.hash='#/'+route; render(); } });
   $('qsheet').addEventListener('click', openSheet);
   const star=document.querySelector('.star'); if(star) star.addEventListener('click', ()=>{ db.stars[q.id]=!db.stars[q.id]; save(); render(); });
   const reveal=$('reveal'); if(reveal) reveal.addEventListener('click', ()=>{ $('anscard').classList.toggle('show'); reveal.classList.toggle('on'); reveal.textContent=$('anscard').classList.contains('show')?'收起参考答案':'查看参考答案'; });
-  document.querySelectorAll('[data-selfev]').forEach(b=>b.addEventListener('click', ()=>{ const ev=b.dataset.selfev; if(ev==='no'&&db.answers[q.id]!=='no') db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; db.answers[q.id]=ev; save(); render(); }));
-  document.querySelectorAll('.opt').forEach(o=>o.addEventListener('click', ()=>{ if(db.answers[q.id]!==undefined&&db.answers[q.id]!=='')return; const chosen=o.dataset.opt; db.answers[q.id]=chosen; if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; save(); render(); }));
+  document.querySelectorAll('[data-selfev]').forEach(b=>b.addEventListener('click', ()=>{ const ev=b.dataset.selfev; if(ev==='no'&&db.answers[q.id]!=='no') db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; db.answers[q.id]=ev; markDone(); save(); render(); }));
+  document.querySelectorAll('.opt').forEach(o=>o.addEventListener('click', ()=>{ if(doneNow)return; const chosen=o.dataset.opt; db.answers[q.id]=chosen; if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; markDone(); save(); render(); }));
   const fillin=$('fillin'), fillgo=$('fillgo');
   if(fillin&&fillgo){
-    fillgo.addEventListener('click', ()=>{ const v=fillin.value; if(!v.trim())return; db.answers[q.id]=v.trim(); if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; save(); render(); });
+    fillgo.addEventListener('click', ()=>{ const v=fillin.value; if(!v.trim())return; db.answers[q.id]=v.trim(); if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; markDone(); save(); render(); });
     fillin.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); fillgo.click(); } });
   }
   const key = e => {
     if(route!=='quiz') return;
-    if(q.type==='mcq' && db.answers[q.id]===undefined){
-      const n=parseInt(e.key,10); if(n>=1&&n<=q.options.length){ db.answers[q.id]='ABCD'[n-1]; save(); render(); }
+    if(q.type==='mcq' && !doneNow){
+      const n=parseInt(e.key,10); if(n>=1&&n<=q.options.length){ const chosen='ABCD'[n-1]; db.answers[q.id]=chosen; if(!isCorrect(i)) db.wrongs[q.id]=(db.wrongs[q.id]||0)+1; markDone(); save(); render(); }
     }
     if((q.type==='term'||q.type==='essay') && (e.key===' '||e.code==='Space')){ e.preventDefault(); const r=$('reveal'); if(r) r.click(); }
   };
@@ -1705,19 +1782,67 @@ function viewStars(){
 }
 /* ================= 错题本 ================= */
 function viewWrong(){
-  const ids = wrongIds();
-  if(!ids.length) return `<div class="page"><div class="empty"><div class="big">✓</div>当前没有错题，继续保持。</div></div>`;
-  const rows = ids.slice().reverse().map(i=>{
+  const ids=wrongIds();
+  if(!ids.length){
+    return `<section class="page">
+      <div class="hdr"><h2>错题本</h2><span class="sub">当前没有待重刷错题</span></div>
+      <div class="empty"><div class="big">✓</div><b>错题已经清空</b><br>继续刷题，答错的题目会自动进入这里。<button class="wstartbtn" data-goto="quiz">去刷题</button></div>
+    </section>`;
+  }
+  const chKeys=CHS.filter(c=>c==='全部'||ids.some(i=>QUIZ_DATA[i].ch===c));
+  const typeKeys=['全部','mcq','fill','term','essay'].filter(t=>t==='全部'||ids.some(i=>QUIZ_DATA[i].type===t));
+  if(!chKeys.includes(wfilter.ch)) wfilter.ch='全部';
+  if(!typeKeys.includes(wfilter.type)) wfilter.type='全部';
+  const list=wrongScopeList();
+  const chCount=new Set(ids.map(i=>QUIZ_DATA[i].ch)).size;
+  const typeCount=new Set(ids.map(i=>QUIZ_DATA[i].type)).size;
+  const chOptions=chKeys.map(c=>`<option value="${esc(c)}" ${wfilter.ch===c?'selected':''}>${esc(c==='全部'?'全部章节':c)}（${c==='全部'?ids.length:ids.filter(i=>QUIZ_DATA[i].ch===c).length}）</option>`).join('');
+  const typeOptions=typeKeys.map(t=>`<option value="${t}" ${wfilter.type===t?'selected':''}>${esc(t==='全部'?'全部题型':TYPES[t])}（${t==='全部'?ids.length:ids.filter(i=>QUIZ_DATA[i].type===t).length}）</option>`).join('');
+  const rows=list.map(i=>{
     const q=QUIZ_DATA[i];
-    const isRev = q.type==='term'||q.type==='essay';
-    const ansShort = (q.ans||'').length>44 ? q.ans.slice(0,44)+'…' : (q.ans||'');
-    return `<div class="wrow" data-goto-wrong="${i}"><span class="tag">${q.ch}</span><span class="tag t4">错 ${db.wrongs[q.id]||0} 次</span><span class="qt">${esc(q.q)}</span><span class="ans">${isRev?'自评需加强 · ':''}答案 <b>${esc(isRev?ansShort:(q.ansText||q.ans))}</b></span></div>`;
+    const isRev=q.type==='term'||q.type==='essay';
+    const cnt=db.wrongs[q.id]||0;
+    const ans=q.type==='mcq'?(q.ansText||q.ans):(q.type==='fill'?q.ans:'进入后查看参考答案');
+    return `<button type="button" class="wcard" data-goto-wrong="${i}">
+      <div class="wctop"><span class="tag">${esc(q.ch)}</span><span class="tag t3">${esc(TYPES[q.type])}</span><span class="tag ${cnt?'t4':'t3'}">${cnt?'错 '+cnt+' 次':'待重刷'}</span><span class="wgo">单题重刷 <span aria-hidden="true">›</span></span></div>
+      <div class="wcq">${esc(q.q).replace(/____/g,'＿＿')}</div>
+      <div class="wans"><span>答案</span><b>${esc(ans)}</b></div>
+    </button>`;
   }).join('');
+  const empty=list.length?'':`<div class="wempty"><div class="big">∅</div><b>这个范围里没有错题</b><span>换一个章节或题型，或查看全部错题。</span></div>`;
+  const target=list.length?`开始重刷这 ${list.length} 题`:'当前范围没有可重刷题目';
   return `<section class="page">
-    <div class="hdr"><h2>错题本</h2><span class="sub">共 ${ids.length} 道答错题目，可集中重刷</span><div class="sp"><button class="danger" id="clearwrong">清空错题记录</button><button class="iconbtn" id="redo" aria-label="重刷错题"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button></div></div>
-    <div class="wronglist">${rows}</div>
+    <div class="hdr"><h2>错题本</h2><span class="sub">先定范围，再集中重刷；答对后会自动移出错题本</span></div>
+    <div class="wsum"><div><b>${ids.length}</b><span>道待重刷</span></div><div><b>${chCount}</b><span>个章节</span></div><div><b>${typeCount}</b><span>种题型</span></div></div>
+    <div class="wscope">
+      <div class="wscopehead"><b>① 选定重刷范围</b><span>当前 ${list.length} 题</span></div>
+      <div class="wselects">
+        <label class="wfield"><span>章节</span><select id="w-ch" aria-label="错题章节范围">${chOptions}</select></label>
+        <label class="wfield"><span>题型</span><select id="w-type" aria-label="错题题型范围">${typeOptions}</select></label>
+      </div>
+      <div class="wscopehint">题目按错误次数从多到少排列；范围越窄，越适合集中突破。</div>
+      <button class="wstartbtn" id="wrongstart" ${list.length?'':'disabled'}>② ${target} <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="wlisthead"><b>${wfilter.ch==='全部'&&wfilter.type==='全部'?'全部错题':'本范围错题'}</b><span>${list.length} 题 · 点单题可只重刷这一道</span></div>
+    ${rows?`<div class="wrongcards">${rows}</div>`:empty}
+    <div class="wfoot"><span>清空只移除错题作答，已答对题和收藏不受影响。</span><button class="wclear" id="clearwrong">清空全部错题</button></div>
   </section>`;
 }
+function bindWrong(){
+  const ch=$('w-ch');
+  if(ch) ch.addEventListener('change',()=>{ wfilter.ch=ch.value; render(); });
+  const ty=$('w-type');
+  if(ty) ty.addEventListener('change',()=>{ wfilter.type=ty.value; render(); });
+  const start=$('wrongstart');
+  if(start) start.addEventListener('click',()=>{ const list=wrongScopeList(); if(list.length) startWrongSession(list,wrongScopeLabel()); });
+  const clear=$('clearwrong');
+  if(clear) clear.addEventListener('click',()=>{
+    if(!confirm('清空全部错题记录？只移除错题作答，已答对题目和收藏不受影响。')) return;
+    wrongIds().forEach(i=>{ const id=QUIZ_DATA[i].id; delete db.answers[id]; delete db.wrongs[id]; });
+    db.wrongs={}; wfilter={ch:'全部',type:'全部'}; session=null; save(); render();
+  });
+}
+
 /* ================= 速记 ================= */
 function viewSpeed(){
   const s = SPEED_DATA[speedIdx];
@@ -1793,9 +1918,7 @@ document.addEventListener('click', e=>{
   const cell = e.target.closest('[data-cell]');
   if(cell){ const id=Number(cell.dataset.cell); const pos=session?session.list.indexOf(id):-1; if(pos>=0){ session.idx=pos; closeSheet(); render(); } }
   if(e.target.closest('[data-close="sheet"]')) closeSheet();
-  const clearwrong=$('clearwrong'); if(clearwrong&&e.target===clearwrong){ const ids=wrongIds(); ids.forEach(i=>{ delete db.wrongs[QUIZ_DATA[i].id]; }); db.answers={}; save(); render(); }
   const resetall=$('resetall'); if(resetall&&e.target===resetall){ db.answers={}; db.stars={}; db.mastery={}; db.wrongs={}; save(); render(); }
-  const redo=$('redo'); if(redo&&e.target===redo){ buildSession(true); if(session.list.length){ route='quiz'; location.hash='#/quiz'; } else { render(); } return; }
   const btn=$('btn-reset'); if(btn&&e.target===btn){ if(confirm('确定重置全部学习进度？此操作不可撤销。')){ db.answers={}; db.stars={}; db.mastery={}; save(); render(); } }
 });
 document.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click', ()=>{ route=b.dataset.route; if(route==='quiz') session=null; location.hash='#/'+route; render(); }));
@@ -1811,9 +1934,14 @@ document.addEventListener('click', e=>{
 document.querySelectorAll('.chfilter button').forEach(b=>b.addEventListener('click', ()=>{ filters.ch=b.dataset.ch; if(route==='quiz'){ buildSession(false); } else { route='quiz'; location.hash='#/quiz'; } render(); }));
 window.addEventListener('hashchange', ()=>{ route=location.hash.replace('#/','')||'home'; render(); });
 document.addEventListener('keydown', e=>{
-  if(route==='quiz'){ if(window.__quizKey){ window.__quizKey(e); if(e.key==='Enter'&&$('qnext')){ const qi=session.list[session.idx], qq=QUIZ_DATA[qi]; const done=db.answers[qq.id]!==undefined; if(done){ e.preventDefault(); $('qnext').click(); } } }
+  if(route==='quiz' && session && session.list.length){
+    const qi=session.list[session.idx], qq=QUIZ_DATA[qi];
+    const answered=qq&&db.answers[qq.id]!==undefined&&db.answers[qq.id]!=='';
+    const done=qq?(session.wrongMode?(answered&&!!(session.retryDone&&session.retryDone[qq.id])):answered):false;
+    if(window.__quizKey) window.__quizKey(e);
+    if(e.key==='Enter'&&$('qnext')&&done){ e.preventDefault(); $('qnext').click(); }
     if(e.key==='ArrowLeft'&&$('qprev')){ $('qprev').click(); }
-    if(e.key==='ArrowRight'&&$('qnext')){ const qi=session.list[session.idx], qq=QUIZ_DATA[qi]; if(db.answers[qq.id]!==undefined){ e.preventDefault(); $('qnext').click(); } }
+    if(e.key==='ArrowRight'&&$('qnext')&&done){ e.preventDefault(); $('qnext').click(); }
   }
   if(e.key==='Escape') closeSheet();
 });
